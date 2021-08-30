@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Pyckage Cookiecutter &mdash; Pyckage Cookiecutter 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Prompts" href="02_prompts.html" />
+    <link rel="prev" title="Welcome to Pyckage Cookiecutter’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Pyckage Cookiecutter
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pyckage Cookiecutter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use">How to Use</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tutorial">Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ci-cd-configuration">CI/CD configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#author">Author</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_prompts.html">Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_core_team.html">Core Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pyckage Cookiecutter</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Pyckage Cookiecutter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/01_about.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyckage-cookiecutter">
+<h1>Pyckage Cookiecutter<a class="headerlink" href="#pyckage-cookiecutter" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://pyckage-cookiecutter.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/pyckage-cookiecutter/badge/?version=latest" /></a>
+<a class="reference external image-reference" href="https://github.com/KnightConan/pyckage-cookiecutter/actions"><img alt="https://github.com/KnightConan/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" src="https://github.com/KnightConan/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" /></a>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This projects consist of a <a class="reference external" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>
+template that generates a full structure for a creating a PyPi standard package.</p>
+<p>While using this project, you will be asked to provide some inputs such as the author,
+the name of the project, etc. As result you will obtain the
+complete file and folder structure to quickly start to code your package.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Please install the Python package <a class="reference external" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a> before using it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install cookiecutter
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-use">
+<h2>How to Use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tutorial">
+<h3>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h3>
+<p>Let’s pretend you want to create a project called “redditclone”.
+By using this template based on <a class="reference external" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>,
+you will be able to quickly setup a buildable PyPi package.</p>
+<p>First, get <a class="reference external" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>. Trust me, it’s awesome:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install cookiecutter
+</pre></div>
+</div>
+<p>Now run it against this repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cookiecutter https://github.com/KnightConan/pyckage-cookiecutter
+</pre></div>
+</div>
+<p>You’ll be prompted for some values. Provide them, then a project will be created for you.</p>
+<p><strong>Warning</strong>: After this point, change ‘My Awesome Project’, ‘John Doe’, etc to your own information.</p>
+<p>Answer the prompts with your own desired <a class="reference internal" href="02_prompts.html#prompts"><span class="std std-ref">Prompts</span></a>. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;pyckage-cookiecutter&#39;...
+remote: Enumerating objects: 219, done.
+remote: Counting objects: 100% (219/219), done.
+remote: Compressing objects: 100% (123/123), done.
+remote: Total 219 (delta 83), reused 181 (delta 69), pack-reused 0
+Receiving objects: 100% (219/219), 41.09 KiB | 1.71 MiB/s, done.
+Resolving deltas: 100% (83/83), done.
+author [John Doe]: John Doe
+email [john-doe@example.com]: john.doe@example.com
+project_name [My Awesome Project]: Reddit Clone
+project_slug [reddit_clone]: reddit
+project_url [https://github.com/example_project]: https://github.com/reddit-clone
+short_description [Behold My Awesome Project!]: A reddit clone.
+version [0.1.0]: 0.1.0
+Select license:
+1 - MIT
+2 - APACHE
+3 - 2-Clause BSD
+4 - 3-Clause BSD
+5 - GPL
+6 - None
+Choose from 1, 2, 3, 4, 5, 6 [1]: 1
+Select ci_tool:
+1 - GitHub
+2 - GitLab
+3 - Bitbucket
+4 - None
+Choose from 1, 2, 3, 4 [1]: 1
+</pre></div>
+</div>
+<p>Enter the project and take a look around:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd reddit/
+$ ls
+</pre></div>
+</div>
+<p>Your repo should have the following structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reddit
+├── .github                         - github actions configurations
+│   └── workflows
+│       ├── main.yml                - pipelines for master, develop and pull requests
+│       └── release.yml             - pipelines for release with tags
+├── docs                            - sphinx documentation
+│   ├── Makefile                    - Makefile defines terminal commands for sphinx documentation
+│   └── source                      - documentation source folder
+│       ├── 01_about.rst
+│       ├── 02_installation.rst
+│       ├── 03_usage.rst
+│       ├── 04_source.rst
+│       ├── 05_release_notes.rst
+│       ├── 06_authors.rst
+│       ├── 07_contributing.rst
+│       ├── conf.py                 - sphinx configuration file
+│       └── index.rst
+├── reddit
+│   └── version.py                  - version information
+├── tests                           - tests
+│   ├── resources                   - resources used in tests
+│   ├── conftest.py                 - fixtures in tests
+│   └── test_version.py             - test version information.
+├── .gitignore
+├── CONTRIBUTING.rst                - contributing guidelines
+├── LICENSE
+├── Makefile                        - predefined terminal commands
+├── MANIFEST.in                     - commands, one per line, instructing setuptools to add or remove some set of files from the sdis
+├── README.rst                      - package information
+├── requirements.txt                - package dependencies
+├── requirements-docs.txt           - documentation dependencies
+├── requirements-tests.txt          - tests dependencies
+├── setup.cfg                       - configurations for mypy, bandit, pytest etc. Centralizing all the configurations to one place.
+├── setup.py                        - package installation configuration
+└── tox.ini                         - run tests with multiple python versions
+</pre></div>
+</div>
+<p>If you want to use CI/CD pipeline for uploading your package to PyPi, please check the section <strong>CI/CD configuration</strong>.</p>
+</div>
+<div class="section" id="ci-cd-configuration">
+<h3>CI/CD configuration<a class="headerlink" href="#ci-cd-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Following steps are predefined in the CI/CD pipelines:</p>
+<ul class="simple">
+<li><p>mypy check</p></li>
+<li><p>flake8 check</p></li>
+<li><p>bandit check</p></li>
+<li><p>test with python 3.6</p></li>
+<li><p>test with python 3.7</p></li>
+<li><p>test with python 3.8</p></li>
+<li><p>deploy to PyPi</p></li>
+</ul>
+<p>Three CI/CD Variables are requisite for the step <strong>deploy to PyPi</strong>:</p>
+<ul class="simple">
+<li><p>TWINE_USERNAME</p></li>
+<li><p>TWINE_PASSWORD</p></li>
+<li><p>TWINE_REPOSITORY_URL</p>
+<ul>
+<li><p><a class="reference external" href="https://test.pypi.org/legacy/">https://test.pypi.org/legacy/</a> for uploading to test version PyPi</p></li>
+<li><p><a class="reference external" href="https://upload.pypi.org/legacy/">https://upload.pypi.org/legacy/</a> for uploading to official PyPi</p></li>
+</ul>
+</li>
+</ul>
+<p>For how to set CI/CD variables in different platform, please reference the following table:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Platform</p></th>
+<th class="head"><p>Setup Steps</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Github</p></td>
+<td><p>Settings -&gt; Secrets -&gt; New repository secret</p></td>
+</tr>
+<tr class="row-odd"><td><p>GitLab</p></td>
+<td><p>Settings -&gt; CI/CD -&gt; Variables -&gt; Add variable</p></td>
+</tr>
+<tr class="row-even"><td><p>Bitbucket</p></td>
+<td><p>Repository settings -&gt; Repository variables -&gt; add</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="author">
+<h2>Author<a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/KnightConan">Zhiwei Zhang</a> - <em>Author</em> / <em>Maintainer</em> - <a class="reference external" href="mailto:zhiwei2017&#37;&#52;&#48;gmail&#46;com?subject=[GitHub]Pyckage%20Cookiecutter">zhiwei2017<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="02_prompts.html" class="btn btn-neutral float-right" title="Prompts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Pyckage Cookiecutter’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Zhiwei Zhang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
