@@ -10,6 +10,23 @@ Pyckage Cookiecutter
 .. image:: https://github.com/KnightConan/pyckage-cookiecutter/workflows/Unit%20Test%20&%20Build%20Test/badge.svg
     :target: https://github.com/KnightConan/pyckage-cookiecutter/actions
 
+.. pypi version badge
+.. image:: https://img.shields.io/pypi/v/pyckage-cookiecutter.svg
+    :target: https://pypi.python.org/pypi/pyckage-cookiecutter/
+
+.. license badge
+.. image:: https://img.shields.io/pypi/l/pyckage-cookiecutter.svg
+    :target: https://pypi.python.org/pypi/pyckage-cookiecutter/
+
+.. python version badge from PyPI
+.. image:: https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg
+    :target: https://pypi.python.org/pypi/pyckage-cookiecutter/
+    :alt: Python 3.6 | Python 3.7 | Python 3.8 | Python 3.9
+
+.. pypi format
+.. image:: https://img.shields.io/pypi/format/pyckage-cookiecutter.svg
+    :target: https://badge.fury.io/py/pyckage-cookiecutter
+
 Introduction
 ------------
 
@@ -49,7 +66,7 @@ You'll be prompted for some values. Provide them, then a project will be created
 
 **Warning**: After this point, change 'My Awesome Project', 'John Doe', etc to your own information.
 
-Answer the prompts with your own desired :ref:`Prompts`. For example::
+Answer the prompts with your own desired `Prompts <https://pyckage-cookiecutter.readthedocs.io/en/latest/02_prompts.html>`_. For example::
 
     Cloning into 'pyckage-cookiecutter'...
     remote: Enumerating objects: 219, done.
@@ -124,6 +141,18 @@ Your repo should have the following structure::
     └── tox.ini                         - run tests with multiple python versions
 
 If you want to use CI/CD pipeline for uploading your package to PyPi, please check the section **CI/CD configuration**.
+
+**Note**:
+
++ This repo is built as a wheel package and uploaded to `PyPi <https://pypi.python.org/pypi/pyckage-cookiecutter/>`_. You can install it through::
+
+    $ pip install pyckage-cookiecutter
+
+  And start generating a new project by call::
+
+    $ pyckage_cookiecutter
+
+  The rest is the same as the `Tutorial <#tutorial>`_ introduced.
 
 CI/CD configuration
 +++++++++++++++++++

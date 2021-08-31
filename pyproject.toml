@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "Pyckage Cookiecutter"
+version = "0.1.0"
+description = "This projects consist of a cookiecutter template that generates a full structure for a creating a PyPi standard package."
+authors = ["Zhiwei Zhang <zhiwei2017@gmail.com>"]
+readme = "README.rst"
+license = "MIT"
+repository = "https://github.com/KnightConan/pyckage-cookiecutter"
+documentation = "https://knightconan.github.io/pyckage-cookiecutter/"
+keywords = ['cookiecutter template', 'python36', 'python37', 'python38']
+packages = [
+  {include = "pyckage_cookiecutter"}
+]
+
+include = [
+  '{{cookiecutter.project_slug}}/**/*',
+  'cookiecutter.json',
+  'hooks/*',
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+cookiecutter = "~1.7"
+
+[tool.poetry.dev-dependencies]
+sh = "~1.14"
+isort = "~5.6"
+flake8 = "~3.8"
+flake8-isort = "~4.0"
+tox = "~3.20"
+pytest = "~5.0"
+pytest-cookies = "~0.5"
+pytest-instafail = "~0.4"
+pyyaml = "~5.3"
+mypy = "~0.910"
+bandit = "~1.7"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+pyckage_cookiecutter = 'pyckage_cookiecutter.main:main'
