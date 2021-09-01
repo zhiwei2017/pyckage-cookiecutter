@@ -314,7 +314,7 @@ different Python versions:</p>
 <div class="section" id="deploying">
 <h2>Deploying<a class="headerlink" href="#deploying" title="Permalink to this headline">¶</a></h2>
 <p>Assume that <a class="reference external" href="https://github.com/c4urself/bump2version">bump2version</a> is installed. To deploy the package, just run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bump2version patch {{ cookiecutter.project_slug}}/version.py  # possible: major / minor / patch
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bump2version patch pyproject.toml  # possible: major / minor / patch
 $ git push
 $ git push --tags
 </pre></div>

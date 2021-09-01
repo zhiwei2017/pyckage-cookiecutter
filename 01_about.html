@@ -175,6 +175,10 @@
 <h1>Pyckage Cookiecutter<a class="headerlink" href="#pyckage-cookiecutter" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://pyckage-cookiecutter.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/pyckage-cookiecutter/badge/?version=latest" /></a>
 <a class="reference external image-reference" href="https://github.com/KnightConan/pyckage-cookiecutter/actions"><img alt="https://github.com/KnightConan/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" src="https://github.com/KnightConan/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="Python 3.6 | Python 3.7 | Python 3.8 | Python 3.9" src="https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg" /></a>
+<a class="reference external image-reference" href="https://badge.fury.io/py/pyckage-cookiecutter"><img alt="https://img.shields.io/pypi/format/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/format/pyckage-cookiecutter.svg" /></a>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This projects consist of a <a class="reference external" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>
@@ -207,7 +211,7 @@ you will be able to quickly setup a buildable PyPi package.</p>
 </div>
 <p>You’ll be prompted for some values. Provide them, then a project will be created for you.</p>
 <p><strong>Warning</strong>: After this point, change ‘My Awesome Project’, ‘John Doe’, etc to your own information.</p>
-<p>Answer the prompts with your own desired <a class="reference internal" href="02_prompts.html#prompts"><span class="std std-ref">Prompts</span></a>. For example:</p>
+<p>Answer the prompts with your own desired <a class="reference external" href="https://pyckage-cookiecutter.readthedocs.io/en/latest/02_prompts.html">Prompts</a>. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;pyckage-cookiecutter&#39;...
 remote: Enumerating objects: 219, done.
 remote: Counting objects: 100% (219/219), done.
@@ -282,6 +286,19 @@ $ ls
 </pre></div>
 </div>
 <p>If you want to use CI/CD pipeline for uploading your package to PyPi, please check the section <strong>CI/CD configuration</strong>.</p>
+<p><strong>Note</strong>:</p>
+<ul>
+<li><p>This repo is built as a wheel package and uploaded to <a class="reference external" href="https://pypi.python.org/pypi/pyckage-cookiecutter/">PyPi</a>. You can install it through:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pyckage-cookiecutter
+</pre></div>
+</div>
+<p>And start generating a new project by call:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pyckage_cookiecutter
+</pre></div>
+</div>
+<p>The rest is the same as the <a class="reference external" href="#tutorial">Tutorial</a> introduced.</p>
+</li>
+</ul>
 </div>
 <div class="section" id="ci-cd-configuration">
 <h3>CI/CD configuration<a class="headerlink" href="#ci-cd-configuration" title="Permalink to this headline">¶</a></h3>
