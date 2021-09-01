@@ -14,3 +14,4 @@ Welcome to **0.1.0** release, which is now at the master branch in the Gitlab re
 
 *Features:*
 
+    * Introduces #2: Initial implementation of pyckage cookiecutter.
