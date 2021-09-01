@@ -1,0 +1,26 @@
+{
+    "author": "John Doe",
+    "email": "{{ cookiecutter.author.lower()|replace(' ', '.') }}@email.com",
+    "project_name": "My Awesome Project",
+    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "project_url": "https://github.com/example_project",
+    "short_description": "Behold My Awesome Project!",
+    "version": "0.1.0",
+    "license": [
+        "MIT",
+        "APACHE",
+        "2-Clause BSD",
+        "3-Clause BSD",
+        "GPL",
+        "None"
+    ],
+    "ci_tool": [
+        "GitHub",
+        "GitLab",
+        "Bitbucket",
+        "None"
+    ],
+    "_copy_without_render": [
+        ".github/*"
+    ]
+}

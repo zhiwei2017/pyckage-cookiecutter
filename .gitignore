@@ -1,7 +1,18 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
+# Temporary / Byte-compiled / optimized / DLL files
+*~
+*/__pycache__/*
 *.py[cod]
 *$py.class
+*.cfg
+!setup.cfg
+*.orig
+*.log
+*.pot
+.cache/*
+.*_cache/*
+.*.swp
+*/.ipynb_checkpoints/*
+*.pyc
 
 # C extensions
 *.so
@@ -44,12 +55,14 @@ htmlcov/
 .coverage
 .coverage.*
 .cache
+junit.xml
 nosetests.xml
 coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
 .pytest_cache/
+cover/*
 
 # Translations
 *.mo
@@ -69,7 +82,9 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+docs/api/*
+docs/_build/*
+docs/build/*
 
 # PyBuilder
 target/
@@ -109,6 +124,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+*.lock
 
 # Spyder project settings
 .spyderproject
@@ -127,3 +143,21 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Project files
+.ropeproject
+.project
+.pydevproject
+.settings
+.idea
+
+# Unused code
+backup/*
+
+# macOS Desktop Services Store
+.DS_Store
+
+# plots
+*.png
+
+!.keep

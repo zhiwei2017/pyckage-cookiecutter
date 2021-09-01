@@ -1,0 +1,103 @@
+# here define your own stages
+stages:
+  - linting
+  - test
+  - deploy
+
+variables:
+  PKG_NAME: {{cookiecutter.project_slug}}
+
+############ START SHARED SCRIPTS ############
+.linting: &linting
+  image: python:3.8-buster
+  stage: linting
+  script:
+    - make ${LINTING_PKG}
+
+.test: &test
+  stage: test
+  script:
+    - make test
+############ END SHARED SCRIPTS ############
+
+############ START LINTING STAGE #############
+linting:flake8:
+  <<: *linting
+  variables:
+    LINTING_PKG: flake8
+  only:
+    - master
+    - develop
+    - merge_requests
+
+linting:mypy:
+  <<: *linting
+  variables:
+    LINTING_PKG: mypy
+  only:
+    - master
+    - develop
+    - merge_requests
+
+linting:bandit:
+  <<: *linting
+  variables:
+    LINTING_PKG: bandit
+  only:
+    - master
+    - develop
+    - merge_requests
+############ END LINTING STAGE #############
+
+############## START TEST STAGE ############
+test:3.6:
+  image: python:3.6-buster
+  <<: *test
+  only:
+    - master
+    - develop
+    - merge_requests
+
+test:3.7:
+  image: python:3.7-buster
+  <<: *test
+  only:
+    - master
+    - develop
+    - merge_requests
+
+test:3.8:
+  image: python:3.8-buster
+  <<: *test
+  only:
+    - master
+    - develop
+    - merge_requests
+############## END TEST STAGE ##############
+
+############# START BUILD STAGE ############
+deploy:
+  image: python:3.8-buster
+  stage: deploy
+  before_script:
+    - apt update -y && apt install -y make curl
+    - pip install twine
+  script:
+    - echo "Building wheel distribution..."
+    - make build_whl
+    - echo "Uploading the package to nexus via twine..."
+    - >
+      if [ -z "${TWINE_USERNAME}" ]; then
+        echo "\033[1mTWINE_USERNAME\033[0m is undefined."
+        exit 1
+      elif [ -z "${TWINE_PASSWORD}" ]; then
+        echo "\033[1mTWINE_PASSWORD\033[0m is undefined."
+        exit 1
+      elif [ -z "${TWINE_REPOSITORY_URL}" ]; then
+        echo "\033[1mTWINE_REPOSITORY_URL\033[0m is undefined."
+        exit 1
+      fi
+    - twine upload --cert /etc/ssl/certs/ca-certificates.crt --skip-existing dist/*.whl
+  only:
+    - /^v[0-9]+\.[0-9]+\.[0-9]+$/
+############# END BUILD STAGE ##############
