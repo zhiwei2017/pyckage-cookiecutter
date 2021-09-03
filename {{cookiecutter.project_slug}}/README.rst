@@ -7,9 +7,9 @@ Introduction
 
 Prerequisites
 -------------
-To install the dependencies listed in `requirements.txt`, you can use::
+To install the dependencies listed in `requirements/base.txt`, you can use::
 
-    $ pip install -r requirements.txt
+    $ pip install -r requirements/base.txt
 
 User Guide
 ----------
@@ -60,7 +60,7 @@ Makefile
    * - flake8
      - Install and run `flake8`_ linting.
    * - install_requirements
-     - Install all the packages listed in \*requirements\*.txt files.
+     - Install all the packages listed in txt files in requirements folder.
    * - test
      - Run tests and generate coverage report.
    * - build_whl
@@ -69,12 +69,12 @@ Makefile
 How to Install
 ++++++++++++++
 
-Please check the section :ref:`Installation <installation>` for detailed information.
+Please check the section `Installation <./docs/source/02_installation.rst>`_ for detailed information.
 
 How to Use
 ++++++++++
 
-Please check the section :ref:`Usage <usage>` for detailed information.
+Please check the section `Usage <./docs/source/03_usage.rst>`_ for detailed information.
 
 Documentation
 +++++++++++++

@@ -106,7 +106,7 @@ def linting_check(cookies, linting_type, context_override, call_params=None):
     try:
         current_dir = str(sh.pwd("-P")).replace("\n", "")
         sh.cd(str(result.project))
-        sh.pip("install", "-r", "requirements.txt")
+        sh.pip("install", "-r", os.path.join("requirements", "base.txt"))
         getattr(sh, linting_type)(*call_params)
         sh.cd(current_dir)
         sh.rm("-r", str(result.project))
@@ -140,9 +140,7 @@ def test_pytest_passes(cookies, context_override):
     try:
         current_dir = str(sh.pwd("-P")).replace("\n", "")
         sh.cd(str(result.project))
-        sh.make("install_requirements")
-        sh.pip("install", "-e", ".")
-        sh.pytest()
+        sh.make("test")
         sh.cd(current_dir)
         sh.rm("-r", str(result.project))
     except sh.ErrorReturnCode as e:

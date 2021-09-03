@@ -37,10 +37,10 @@ except FileNotFoundError:
 
 
 # Requirements
-INSTALL_REQUIRED = _parse_requirements("requirements.txt")
+INSTALL_REQUIRED = _parse_requirements("requirements/base.txt")
 # Optional requirements
-TEST_REQUIRED = _parse_requirements("requirements-tests.txt")
-DOCS_REQUIRED = _parse_requirements("requirements-docs.txt")
+TEST_REQUIRED = _parse_requirements("requirements/dev.txt")
+DOCS_REQUIRED = _parse_requirements("requirements/doc.txt")
 
 # What packages are optional?
 EXTRAS = {"docs": DOCS_REQUIRED}
@@ -52,7 +52,7 @@ setup(name=NAME,
       author_email=EMAIL,
       description=SHORT_DESCRIPTION,
       long_description=LONG_DESCRIPTION,
-      long_description_content_type='text/markdown',
+      long_description_content_type='text/x-rst',
       url=URL,
       packages=find_packages(include=["{{cookiecutter.project_slug}}*"],
                              exclude=["tests*", "docs*"]),

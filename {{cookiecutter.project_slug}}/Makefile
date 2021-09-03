@@ -11,47 +11,43 @@ help:
 	@echo "bandit                 : Install and run bandit security analysis.";
 	@echo "mypy                   : Install and run mypy type checking.";
 	@echo "flake8                 : Install and run flake8 linting.";
-	@echo "install_requirements   : Install all the packages listed in *requirements*.txt files.";
+	@echo "install_requirements   : Install all the packages listed in txt files in requirements folder.";
 	@echo "test                   : Run tests and generate coverage report.";
 	@echo "build_whl              : Build a python wheel package.";
-	@echo "upload_docs            : Upload built sphinx documentation.";
 
 # Clean the folder from build/test related folders
 clean: clean-build clean-pyc
-	rm -rf .mypy_cache/
-	rm -rf .pytest_cache/
+	rm -rf .mypy_cache/ .pytest_cache/
 	rm -f .coverage
 
 clean-pyc:
-	find . -name '*.pyc' -exec rm -rf {} +
-	find . -name '*.pyo' -exec rm -rf {} +
+	find . \( -name '*.pyc' -o -name '*.pyo' \) -exec rm -rf {} +
 
 clean-build:
-	rm -rf build/
-	rm -rf dist/
-	rm -rf *.egg-info
+	rm -rf build/ dist/ *.egg-info
 
-# Install all the packages listed in *requirements*.txt files.
+# Install all the packages listed in txt files in requirements folder.
 install_requirements:
-	find . -name '*requirements*.txt' -exec python -m pip install -r {} \;
+	find ./requirements -maxdepth 1 -name '*.txt' -exec python -m pip install -r {} \;
 
 # Install and run bandit security analysis
 bandit:
-	python -m pip install bandit
+	pip install bandit
 	bandit -r $(SOURCE_DIR)
 
 # Install and run mypy type checking
-mypy: install_requirements
-	python -m pip install mypy
+mypy:
+	pip install -r requirements/dev.txt
 	mypy $(SOURCE_DIR)
 
 # Install and run flake8 linting
 flake8:
-	python -m pip install flake8
+	pip install flake8
 	flake8 $(SOURCE_DIR)
 
 # Install requirements for testing and run tests
-test: install_requirements
+test:
+	pip install -r requirements/dev.txt
 	python -m pip install -e .
 	pytest
 
