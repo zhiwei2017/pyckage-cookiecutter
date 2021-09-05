@@ -30,7 +30,7 @@ except Exception as e:
 
 try:
     # Load README as description of package
-    with open('README.md', encoding="utf-8") as readme_file:
+    with open('README.rst', encoding="utf-8") as readme_file:
         LONG_DESCRIPTION = readme_file.read()
 except FileNotFoundError:
     LONG_DESCRIPTION = SHORT_DESCRIPTION
