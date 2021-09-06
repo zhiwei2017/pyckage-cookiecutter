@@ -32,24 +32,24 @@ install_requirements:
 
 # Install and run bandit security analysis
 bandit:
-	pip install bandit
+	python -m pip install bandit
 	bandit -r $(SOURCE_DIR)
 
 # Install and run mypy type checking
 mypy:
-	pip install -r requirements/dev.txt
+	python -m pip install -r requirements/dev.txt
 	mypy $(SOURCE_DIR)
 
 # Install and run flake8 linting
 flake8:
-	pip install flake8
+	python -m pip install flake8
 	flake8 $(SOURCE_DIR)
 
 # Install requirements for testing and run tests
 test:
-	pip install -r requirements/dev.txt
+	python -m pip install -r requirements/dev.txt
 	python -m pip install -e .
-	pytest
+	pytest --instafail
 
 # build wheel package
 build_whl:

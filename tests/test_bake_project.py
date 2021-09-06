@@ -97,17 +97,13 @@ def test_error_if_incompatible(cookies, context, invalid_context):
     assert isinstance(result.exception, FailedHookException)
 
 
-def linting_check(cookies, linting_type, context_override, call_params=None):
+def linting_check(cookies, linting_type, context_override):
     """Generated project should pass flake8."""
     result = cookies.bake(extra_context=context_override)
-    if call_params is None:
-        call_params = []
-    call_params.append(result.context['project_slug'])
     try:
         current_dir = str(sh.pwd("-P")).replace("\n", "")
         sh.cd(str(result.project))
-        sh.pip("install", "-r", os.path.join("requirements", "base.txt"))
-        getattr(sh, linting_type)(*call_params)
+        sh.make(linting_type)
         sh.cd(current_dir)
         sh.rm("-r", str(result.project))
     except sh.ErrorReturnCode as e:
@@ -129,7 +125,7 @@ def test_mypy_passes(cookies, context_override):
 @pytest.mark.parametrize("context_override", pytest.SUPPORTED_COMBINATIONS, ids=_fixture_id)
 def test_bandit_passes(cookies, context_override):
     """Generated project should pass bandit."""
-    linting_check(cookies, "bandit", context_override, call_params=['-r'])
+    linting_check(cookies, "bandit", context_override)
 
 
 @pytest.mark.parametrize("context_override", pytest.SUPPORTED_COMBINATIONS, ids=_fixture_id)

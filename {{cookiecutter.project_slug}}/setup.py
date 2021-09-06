@@ -20,7 +20,7 @@ def _parse_requirements(filename):
 
 
 try:
-    VERSION = import_module(NAME).__version__
+    VERSION = import_module(NAME+".version").__version__
 except Exception as e:
     print("Version information cannot be imported using "
           "'importlib.import_module' due to {}.".format(e))

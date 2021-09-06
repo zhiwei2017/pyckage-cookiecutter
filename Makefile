@@ -27,5 +27,5 @@ install_requirements:
 
 # Install requirements for testing and run tests
 test:
-	pip install -r requirements/dev.txt
-	pytest
+	python -m pip install -r requirements/dev.txt
+	pytest --instafail
