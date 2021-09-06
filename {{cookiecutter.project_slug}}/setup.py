@@ -1,3 +1,4 @@
+import os
 from distutils.text_file import TextFile
 from pathlib import Path
 from importlib import import_module
@@ -13,8 +14,9 @@ EMAIL = '{{cookiecutter.email}}'
 
 def _parse_requirements(filename):
     """Return requirements from requirements file."""
-    setup_path = Path(__file__).with_name(filename)
-    return TextFile(filename=str(setup_path)).readlines()
+    setup_path = Path(__file__).resolve().parent.joinpath(filename)
+    requirements = TextFile(filename=str(setup_path)).readlines()
+    return [p for p in requirements if "-r" not in p]
 
 
 try:
@@ -37,13 +39,13 @@ except FileNotFoundError:
 
 
 # Requirements
-INSTALL_REQUIRED = _parse_requirements("requirements/base.txt")
+INSTALL_REQUIRED = _parse_requirements(os.path.join("requirements", "base.txt"))
 # Optional requirements
-TEST_REQUIRED = _parse_requirements("requirements/dev.txt")
-DOCS_REQUIRED = _parse_requirements("requirements/doc.txt")
+DEV_REQUIRED = _parse_requirements(os.path.join("requirements", "dev.txt"))
+DOC_REQUIRED = _parse_requirements(os.path.join("requirements", "dev.txt"))
 
 # What packages are optional?
-EXTRAS = {"docs": DOCS_REQUIRED}
+EXTRAS = {"docs": DOC_REQUIRED}
 
 
 setup(name=NAME,
@@ -58,6 +60,6 @@ setup(name=NAME,
                              exclude=["tests*", "docs*"]),
       include_package_data=True,
       install_requires=INSTALL_REQUIRED,
-      tests_require=TEST_REQUIRED,
+      tests_require=DEV_REQUIRED,
       extras_require=EXTRAS,
       setup_requires=['wheel'])
