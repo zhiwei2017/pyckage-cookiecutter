@@ -155,41 +155,150 @@ If you want to use CI/CD pipeline for uploading your package to PyPi, please che
 
   The rest is the same as the `Tutorial <#tutorial>`_ introduced.
 
-CI/CD configuration
-+++++++++++++++++++
+CI/CD Pipelines
++++++++++++++++
 
-Following steps are predefined in the CI/CD pipelines:
+The CI/CD pipelines are predefined in the generated project. Please check following sections for
+which steps are included and how to configure them in different platforms.
 
-+ mypy check
-+ flake8 check
-+ bandit check
-+ test with python 3.6
-+ test with python 3.7
-+ test with python 3.8
-+ deploy to PyPi
+GitHub Actions
+~~~~~~~~~~~~~~
 
-Three CI/CD Variables are requisite for the step **deploy to PyPi**:
+You can find all the configuration files of GitHub Actions in ``.github/workflows`` folder.
 
-* TWINE_USERNAME
-* TWINE_PASSWORD
-* TWINE_REPOSITORY_URL
+Content
+:::::::
 
-  + https://test.pypi.org/legacy/ for uploading to test version PyPi
-  + https://upload.pypi.org/legacy/ for uploading to official PyPi
++-------------+------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+| Config File |          Steps         |                Trigger Rules                     | Requisite CI/CD Variables                                              |
++=============+========================+==================================================+========================================================================+
+|             | mypy check             |                                                  |                                                                        |
+|             +------------------------+                                                  |                                                                        |
+|             | flake8 check           | + **Pushes** to *master/develop* branches        |                                                                        |
+|             +------------------------+                                                  |                                                                        |
+| main.yml    | bandit check           | + **Pull Requests** to *master/develop* branches |                                                                        |
+|             +------------------------+                                                  |                                                                        |
+|             | test with python 3.6   |                                                  |                                                                        |
+|             +------------------------+                                                  |                                                                        |
+|             | test with python 3.7   |                                                  |                                                                        |
+|             +------------------------+                                                  |                                                                        |
+|             | test with python 3.8   |                                                  |                                                                        |
++-------------+------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+|             |                        |                                                  | TWINE_USERNAME                                                         |
+|             |                        |                                                  +------------------------------------------------------------------------+
+| release.yml | deploy to PyPi         | **Pushes** to tags matching *vXX.XX.XX*          | TWINE_PASSWORD                                                         |
+|             |                        |                                                  +------------------------------------------------------------------------+
+|             |                        |                                                  | TWINE_REPOSITORY_URL                                                   |
+|             |                        |                                                  |                                                                        |
+|             |                        |                                                  | * https://test.pypi.org/legacy/ for uploading to test version PyPi     |
+|             |                        |                                                  | * https://upload.pypi.org/legacy/ for uploading to test version PyPi   |
++-------------+------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+| sphinx.yml  | deploy GitHub pages    | **Pushes** to *master* branch                    |                                                                        |
++-------------+------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 
-For how to set CI/CD variables in different platform, please reference the following table:
+**Note**:
 
-.. list-table::
-   :header-rows: 1
++ Before publishing the GitHub pages of your project for the first time, please manually create the branch **gh-pages** via::
 
-   * - Platform
-     - Setup Steps
-   * - Github
-     - Settings -> Secrets -> New repository secret
-   * - GitLab
-     - Settings -> CI/CD -> Variables -> Add variable
-   * - Bitbucket
-     - Repository settings -> Repository variables -> add
+    $ git checkout master
+    $ git checkout -b gh-pages
+    $ git push origin gh-pages
+
+Setup Steps
+:::::::::::
+
+1. Go to **Settings**.
+2. Click **Secrets** section.
+3. Click **New repository secret** button.
+4. Input the name and value of a CI/CD variable.
+
+GitLab CI
+~~~~~~~~~
+
+The file ``.gitlab-ci.yml`` contains all the configurations for GitLab CI.
+
+Content
+:::::::
+
++-------------+------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+| Stages      |          Steps         |                Trigger Rules                     | Requisite CI/CD Variables                                              |
++=============+========================+==================================================+========================================================================+
+|             | mypy check             |                                                  |                                                                        |
+|             +------------------------+                                                  |                                                                        |
+| linting     | flake8 check           | + **Pushes** to *master/develop* branches        |                                                                        |
+|             +------------------------+                                                  |                                                                        |
+|             | bandit check           | + Any **Merge Requests**                         |                                                                        |
++-------------+------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+|             | test with python 3.6   | + **Pushes** to *master/develop* branches        |                                                                        |
+|             +------------------------+                                                  |                                                                        |
+| test        | test with python 3.7   | + Any **Merge Requests**                         |                                                                        |
+|             +------------------------+                                                  |                                                                        |
+|             | test with python 3.8   |                                                  |                                                                        |
++-------------+------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+|             |                        |                                                  | TWINE_USERNAME                                                         |
+|             |                        |                                                  +------------------------------------------------------------------------+
+| deploy      | deploy to PyPi         | **Pushes** to tags matching *vXX.XX.XX*          | TWINE_PASSWORD                                                         |
+|             |                        |                                                  +------------------------------------------------------------------------+
+|             |                        |                                                  | TWINE_REPOSITORY_URL                                                   |
+|             |                        |                                                  |                                                                        |
+|             |                        |                                                  | * https://test.pypi.org/legacy/ for uploading to test version PyPi     |
+|             |                        |                                                  | * https://upload.pypi.org/legacy/ for uploading to test version PyPi   |
++-------------+------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+
+Setup Steps
+:::::::::::
+
+1. Go to **Settings**.
+2. Click **CI/CD** section.
+3. Go to **Variables** section.
+4. Click **Add variable** button.
+5. Input the name and value of a CI/CD variable.
+
+Bitbucket Pipelines
+~~~~~~~~~~~~~~~~~~~
+
+The file ``bitbucket-pipelines.yml`` contains all the configurations of Bitbucket Pipelines.
+
+Content
+:::::::
+
++------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+|          Steps         |                Trigger Rules                     | Requisite CI/CD Variables                                              |
++========================+==================================================+========================================================================+
+| mypy check             |                                                  |                                                                        |
++------------------------+                                                  |                                                                        |
+| flake8 check           | + **Pushes** to *master/develop* branches        |                                                                        |
++------------------------+                                                  |                                                                        |
+| bandit check           | + Any **Pull Requests**                          |                                                                        |
++------------------------+                                                  |                                                                        |
+| test with python 3.6   |                                                  |                                                                        |
++------------------------+                                                  |                                                                        |
+| test with python 3.7   |                                                  |                                                                        |
++------------------------+                                                  |                                                                        |
+| test with python 3.8   |                                                  |                                                                        |
++------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+|                        |                                                  | TWINE_USERNAME                                                         |
+|                        |                                                  +------------------------------------------------------------------------+
+| deploy to PyPi         | **Pushes** to tags matching *vXX.XX.XX*          | TWINE_PASSWORD                                                         |
+|                        |                                                  +------------------------------------------------------------------------+
+|                        |                                                  | TWINE_REPOSITORY_URL                                                   |
+|                        |                                                  |                                                                        |
+|                        |                                                  | * https://test.pypi.org/legacy/ for uploading to test version PyPi     |
+|                        |                                                  | * https://upload.pypi.org/legacy/ for uploading to test version PyPi   |
++------------------------+--------------------------------------------------+------------------------------------------------------------------------+
+
+Setup Steps
+:::::::::::
+
+1. Go to **Repository settings**.
+2. Click **Repository variables**.
+3. Click **add** button.
+4. Input the name and value of a CI/CD variable.
+
+Acknowledgements
+----------------
+
+Special thanks to the project `cookiecutter-pypackage <https://github.com/audreyfeldroy/cookiecutter-pypackage>`_ for the nice *CONTRIBUTING.rst* template.
 
 Author
 ------
