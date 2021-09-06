@@ -106,36 +106,37 @@ Your repo should have the following structure::
 
     reddit
     ├── .github                         - github actions configurations
-    │   └── workflows
-    │       ├── main.yml                - pipelines for master, develop and pull requests
-    │       └── release.yml             - pipelines for release with tags
+    │   └── workflows
+    │       ├── main.yml                - pipelines for master, develop and pull requests
+    │       └── release.yml             - pipelines for release with tags
     ├── docs                            - sphinx documentation
-    │   ├── Makefile                    - Makefile defines terminal commands for sphinx documentation
-    │   └── source                      - documentation source folder
-    │       ├── 01_about.rst
-    │       ├── 02_installation.rst
-    │       ├── 03_usage.rst
-    │       ├── 04_source.rst
-    │       ├── 05_release_notes.rst
-    │       ├── 06_authors.rst
-    │       ├── 07_contributing.rst
-    │       ├── conf.py                 - sphinx configuration file
-    │       └── index.rst
+    │   ├── Makefile                    - Makefile defines terminal commands for sphinx documentation
+    │   └── source                      - documentation source folder
+    │       ├── 01_about.rst
+    │       ├── 02_installation.rst
+    │       ├── 03_usage.rst
+    │       ├── 04_source.rst
+    │       ├── 05_release_notes.rst
+    │       ├── 06_authors.rst
+    │       ├── 07_contributing.rst
+    │       ├── conf.py                 - sphinx configuration file
+    │       └── index.rst
     ├── reddit
-    │   └── version.py                  - version information
+    │   └── version.py                  - version information
     ├── tests                           - tests
-    │   ├── resources                   - resources used in tests
-    │   ├── conftest.py                 - fixtures in tests
-    │   └── test_version.py             - test version information.
+    │   ├── resources                   - resources used in tests
+    │   ├── conftest.py                 - fixtures in tests
+    │   └── test_version.py             - test version information.
     ├── .gitignore
     ├── CONTRIBUTING.rst                - contributing guidelines
     ├── LICENSE
     ├── Makefile                        - predefined terminal commands
     ├── MANIFEST.in                     - commands, one per line, instructing setuptools to add or remove some set of files from the sdis
     ├── README.rst                      - package information
-    ├── requirements.txt                - package dependencies
-    ├── requirements-docs.txt           - documentation dependencies
-    ├── requirements-tests.txt          - tests dependencies
+    ├── requirements                    - package dependencies
+    │   ├── base.txt                    - base dependencies
+    │   ├── doc.txt                     - documentation dependencies
+    │   └── dev.txt                     - tests dependencies
     ├── setup.cfg                       - configurations for mypy, bandit, pytest etc. Centralizing all the configurations to one place.
     ├── setup.py                        - package installation configuration
     └── tox.ini                         - run tests with multiple python versions
