@@ -94,6 +94,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#versioning">Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.2.0</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="04_core_team.html">Core Team</a></li>
@@ -175,11 +177,65 @@
 <h2>0.1.0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Welcome to <strong>0.1.0</strong> release, which is now at the master branch in the Gitlab repository at <a class="reference external" href="https://github.com/KnightConan/pyckage-cookiecutter">Pyckage Cookiecutter</a></p>
 <p><em>Features:</em></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Introduces #2: Initial implementation of pyckage cookiecutter.</p></li>
+<ul class="simple">
+<li><p>Introduces <a class="reference external" href="https://github.com/KnightConan/pyckage-cookiecutter/pull/1">#1</a>: Initial implementation of pyckage cookiecutter.</p></li>
 </ul>
-</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>0.1.1<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><em>Features:</em></p>
+<ul class="simple">
+<li><p>Introduces <a class="reference external" href="https://github.com/KnightConan/pyckage-cookiecutter/pull/2">#2</a>:</p>
+<ul>
+<li><p>Requirements rearrangement:</p>
+<ol class="arabic simple">
+<li><p>create requirements folder for containing requirements files</p></li>
+<li><p>move requirements.txt to base.txt in requirements folder, requirements-docs.txt to doc.txt in requirements folder, 3. 3. requirements-tests.txt to dev.txt in requirements folder</p></li>
+<li><p>add dependency file base.txt in doc.txt and dev.txt</p></li>
+<li><p>adapt changes to corresponding files, such as Makefile, README.rst, pipeline files, setup.py etc</p></li>
+<li><p>remove redundant dependencies in dev.txt and pyproject.toml</p></li>
+<li><p>Update Makefile to have ‘python -m’ as prefix for all pip commands to keep it consistent</p></li>
+<li><p>update test_bake_project.py with make commands for executing tests for linting and pytest</p></li>
+</ol>
+</li>
+<li><p>Bug fix:</p>
+<ol class="arabic simple">
+<li><p>fix Wrong README file type in package setup.py</p></li>
+<li><p>fix muted failed version import in setup.py</p></li>
+<li><p>fix broken setup.py because of requirements rearrangement</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>0.2.0<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><em>Features:</em></p>
+<ul class="simple">
+<li><p>Introduces <a class="reference external" href="https://github.com/KnightConan/pyckage-cookiecutter/pull/4">#4</a>:</p>
+<ul>
+<li><p>Update documentation for release notes</p></li>
+<li><p>Add more tags in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+</ul>
+</li>
+<li><p>Introduces <a class="reference external" href="https://github.com/KnightConan/pyckage-cookiecutter/pull/5">#5</a>:</p>
+<ul>
+<li><p>Add sphinx.yml for github pages publishing</p></li>
+<li><p>Adjust documentation in <code class="docutils literal notranslate"><span class="pre">README.rst</span></code> for how to setup CI/CD pipelines in different platforms</p></li>
+<li><p>Add Acknowledgements section in <code class="docutils literal notranslate"><span class="pre">README.rst</span></code></p></li>
+</ul>
+</li>
+<li><p>Introduces <a class="reference external" href="https://github.com/KnightConan/pyckage-cookiecutter/pull/7">#7</a>:</p>
+<ul>
+<li><p>Add twine check in <code class="docutils literal notranslate"><span class="pre">test_bake_project.py</span></code> and github actions for pull requests or pushes to master/develop branches</p></li>
+<li><p>Add twine check step in all pipelines in the cookiecutter template</p></li>
+<li><p>Update corresponding section in <code class="docutils literal notranslate"><span class="pre">README.rst</span></code> at root and adapt <code class="docutils literal notranslate"><span class="pre">README.rst</span></code> with additional configuration information for pipelines</p></li>
+<li><p>Add missing linting checks in github actions file in cookiecutter template</p></li>
+<li><p>Add whl file extension for twine upload</p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
