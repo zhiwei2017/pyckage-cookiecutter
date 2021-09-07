@@ -146,7 +146,6 @@ def test_pytest_passes(cookies, context_override):
 @setup_test_check
 def test_twine_check_passes(cookies, context_override):
     """Generated project should be able to build a wheel package, which passes twine check."""
-    sh.pip("install", "-r", os.path.join("requirements", "base.txt"))
     sh.pip("install", "twine")
-    sh.python("setup.py", "bdist_wheel")
-    sh.twine("check", os.path.join("dist", "*"))
+    sh.make("build_whl")
+    sh.twine("check", os.path.join("dist", "*.whl"))
