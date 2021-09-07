@@ -2,6 +2,7 @@
 stages:
   - linting
   - test
+  - build
   - deploy
 
 variables:
@@ -76,6 +77,24 @@ test:3.8:
 ############## END TEST STAGE ##############
 
 ############# START BUILD STAGE ############
+build:
+  image: python:3.8-buster
+  stage: build
+  before_script:
+    - apt update -y && apt install -y make curl
+    - pip install twine
+  script:
+    - echo "Building wheel distribution..."
+    - make build_whl
+    - echo "Uploading the package to nexus via twine..."
+    - twine check dist/*.whl
+  only:
+    - master
+    - develop
+    - merge_requests
+############# END BUILD STAGE ##############
+
+############# START DEPLOY STAGE ############
 deploy:
   image: python:3.8-buster
   stage: deploy
@@ -100,4 +119,4 @@ deploy:
     - twine upload --cert /etc/ssl/certs/ca-certificates.crt --skip-existing dist/*.whl
   only:
     - /^v[0-9]+\.[0-9]+\.[0-9]+$/
-############# END BUILD STAGE ##############
+############# END DEPLOY STAGE ##############

@@ -31,6 +31,15 @@ definitions:
           - pip
         script:
           - make test
+    - step: &build-step
+        name: Build package
+        caches:
+          - pip
+        script:
+          - apt update -y && apt install -y make curl
+          - pip install twine
+          - make build_whl
+          - twine check dist/*.whl
 pipelines:
   pull-requests:
     "**":
@@ -48,6 +57,9 @@ pipelines:
           - step:
               image: python:3.8
               <<: *test-step
+      - step:
+          image: python:3.8
+          <<: *build-step
   branches:
     "{master,develop}":
       - parallel:
@@ -64,6 +76,9 @@ pipelines:
           - step:
               image: python:3.8
               <<: *test-step
+      - step:
+          image: python:3.8
+          <<: *build-step
   tags:
     "v*":   # release tag
       - step:

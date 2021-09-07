@@ -5,8 +5,7 @@ name: Publish Package to Pypi
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the master branch
+  # Trigger the workflow on push for release branches vXX.XX.XX
   push:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+'
@@ -36,4 +35,4 @@ jobs:
         TWINE_REPOSITORY_URL: ${{ secrets.TWINE_REPOSITORY_URL }}
       run: |
         python setup.py sdist bdist_wheel
-        twine upload dist/*
+        twine upload dist/*.whl
