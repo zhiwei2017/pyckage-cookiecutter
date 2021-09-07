@@ -49,7 +49,7 @@ flake8:
 test:
 	python -m pip install -r requirements/dev.txt
 	python -m pip install -e .
-	pytest --instafail
+	pytest
 
 # build wheel package
 build_whl:

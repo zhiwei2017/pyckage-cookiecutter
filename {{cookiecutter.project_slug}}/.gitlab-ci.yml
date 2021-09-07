@@ -89,6 +89,8 @@ build:
     - echo "Uploading the package to nexus via twine..."
     - twine check dist/*.whl
   only:
+    - master
+    - develop
     - merge_requests
 ############# END BUILD STAGE ##############
 
