@@ -42,10 +42,10 @@ def test_bake_project(cookies, context, context_override):
     result = cookies.bake(extra_context={**context, **context_override})
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project.basename == context["project_slug"]
-    assert result.project.isdir()
+    assert result.project_path.name == context["project_slug"]
+    assert result.project_path.is_dir()
 
-    paths = build_files_list(str(result.project))
+    paths = build_files_list(str(result.project_path))
     assert paths
     check_paths(paths)
 
@@ -64,10 +64,10 @@ def test_gitlab_invokes_linting_and_pytest(cookies, context, stage,
 
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project.basename == context["project_slug"]
-    assert result.project.isdir()
+    assert result.project_path.name == context["project_slug"]
+    assert result.project_path.is_dir()
 
-    with open(f"{result.project}/.gitlab-ci.yml", "r") as gitlab_yml:
+    with open(f"{result.project_path}/.gitlab-ci.yml", "r") as gitlab_yml:
         try:
             gitlab_config = yaml.safe_load(gitlab_yml)
             assert gitlab_config[stage]["script"] == expected_test_script
@@ -97,50 +97,55 @@ def test_error_if_incompatible(cookies, context, invalid_context):
     assert isinstance(result.exception, FailedHookException)
 
 
-def linting_check(cookies, linting_type, context_override):
-    """Generated project should pass flake8."""
-    result = cookies.bake(extra_context=context_override)
-    try:
-        current_dir = str(sh.pwd("-P")).replace("\n", "")
-        sh.cd(str(result.project))
-        sh.make(linting_type)
-        sh.cd(current_dir)
-        sh.rm("-r", str(result.project))
-    except sh.ErrorReturnCode as e:
-        pytest.fail(e.stdout.decode())
+def setup_test_check(func):
+    """Decorator function for setting up test environment"""
+    def wrapper_test(cookies, context_override):
+        result = cookies.bake(extra_context=context_override)
+        project_path = str(result.project_path)
+
+        try:
+            current_dir = str(sh.pwd("-P")).replace("\n", "")
+            sh.cd(project_path)
+            func(cookies, context_override)
+            sh.cd(current_dir)
+            sh.rm("-r", project_path)
+        except sh.ErrorReturnCode as e:
+            pytest.fail(e.stdout.decode())
+    return wrapper_test
 
 
 @pytest.mark.parametrize("context_override", pytest.SUPPORTED_COMBINATIONS, ids=_fixture_id)
+@setup_test_check
 def test_flake8_passes(cookies, context_override):
     """Generated project should pass flake8."""
-    linting_check(cookies, "flake8", context_override)
+    sh.make("flake8")
 
 
 @pytest.mark.parametrize("context_override", pytest.SUPPORTED_COMBINATIONS, ids=_fixture_id)
+@setup_test_check
 def test_mypy_passes(cookies, context_override):
     """Generated project should pass mypy."""
-    linting_check(cookies, "mypy", context_override)
+    sh.make("mypy")
 
 
 @pytest.mark.parametrize("context_override", pytest.SUPPORTED_COMBINATIONS, ids=_fixture_id)
+@setup_test_check
 def test_bandit_passes(cookies, context_override):
     """Generated project should pass bandit."""
-    linting_check(cookies, "bandit", context_override)
+    sh.make("bandit")
 
 
 @pytest.mark.parametrize("context_override", pytest.SUPPORTED_COMBINATIONS, ids=_fixture_id)
+@setup_test_check
 def test_pytest_passes(cookies, context_override):
-    """Generated project should pass black."""
-    result = cookies.bake(extra_context=context_override)
-
-    try:
-        current_dir = str(sh.pwd("-P")).replace("\n", "")
-        sh.cd(str(result.project))
-        sh.make("test")
-        sh.cd(current_dir)
-        sh.rm("-r", str(result.project))
-    except sh.ErrorReturnCode as e:
-        pytest.fail(e.stdout.decode())
+    """Generated project should pass pytest."""
+    sh.make("test")
 
 
-
+@pytest.mark.parametrize("context_override", pytest.SUPPORTED_COMBINATIONS, ids=_fixture_id)
+@setup_test_check
+def test_twine_check_passes(cookies, context_override):
+    """Generated project should be able to build a wheel package, which passes twine check."""
+    sh.pip("install", "twine")
+    sh.make("build_whl")
+    sh.twine("check", os.path.join("dist", "*.whl"))
