@@ -45,4 +45,4 @@ jobs:
     - name: Build and test publishing package
       run: |
         poetry build -f wheel
-        twine check dist/*
+        twine check dist/*.whl
