@@ -107,8 +107,7 @@ Your repo should have the following structure::
     reddit
     ├── .github                         - github actions configurations
     │   └── workflows
-    │       ├── build.yml               - pipelines for building package and checking with twine
-    │       ├── main.yml                - pipelines for linting checks and testing
+    │       ├── test.yml                - pipelines for linting checks and testing
     │       ├── release.yml             - pipelines for releases with tags
     │       └── sphinx.yml              - pipelines for publishing github pages
     ├── docs                            - sphinx documentation
@@ -178,15 +177,15 @@ Content
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | flake8 check                                 | + **Pushes** to *master/develop* branches        |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
-| main.yml    | bandit check                                 | + **Pull Requests** to *master/develop* branches |                                                                        |
+| test.yml    | bandit check                                 | + **Pull Requests** to *master/develop* branches |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | test with python 3.6 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | test with python 3.7 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | test with python 3.8 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
-+-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
-| build.yml   | twine check the built package                | **Pull Requests** to *master/develop* branches   |                                                                        |
+|             +----------------------------------------------+                                                  |                                                                        |
+|             | twine check the built package                |                                                  |                                                                        |
 +-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 |             |                                              |                                                  | TWINE_USERNAME                                                         |
 |             |                                              |                                                  +------------------------------------------------------------------------+
