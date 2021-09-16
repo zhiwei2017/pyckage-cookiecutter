@@ -110,10 +110,10 @@ Deploying
 
 Assume that bump2version_ is installed. To deploy the package, just run::
 
-    $ bump2version patch {{ cookiecutter.project_slug}}/version.py  # possible: major / minor / patch
+    $ bump2version patch  # possible: major / minor / patch
     $ git push
     $ git push --tags
 
-Github Actions will do the rest.
+{% if cookiecutter.ci_tool == 'GitHub' %}Github Actions{% elif cookiecutter.ci_tool == 'GitLab' %}GitLab CI/CD{% else %}Bitbucket Pipelines{% endif %} will do the rest.
 
 .. _bump2version: https://github.com/c4urself/bump2version

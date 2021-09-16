@@ -5,23 +5,23 @@ Versioning
 ----------
 
 
-We use `SemVer <http://semver.org/>`_ for versioning. For the versions available, see the `the project tags <https://github.com/KnightConan/pyckage-cookiecutter/tags>`_.
+We use `SemVer <http://semver.org/>`_ for versioning. For the versions available, see the `the project tags <https://github.com/zhiwei2017/pyckage-cookiecutter/tags>`_.
 
 0.1.0
 -----
 
-Welcome to **0.1.0** release, which is now at the master branch in the Gitlab repository at `Pyckage Cookiecutter <https://github.com/KnightConan/pyckage-cookiecutter>`_
+Welcome to **0.1.0** release, which is now at the master branch in the Gitlab repository at `Pyckage Cookiecutter <https://github.com/zhiwei2017/pyckage-cookiecutter>`_
 
 *Features:*
 
-* Introduces `#1 <https://github.com/KnightConan/pyckage-cookiecutter/pull/1>`_: Initial implementation of pyckage cookiecutter.
+* Introduces `#1 <https://github.com/zhiwei2017/pyckage-cookiecutter/pull/1>`_: Initial implementation of pyckage cookiecutter.
 
 0.1.1
 -----
 
 *Features:*
 
-* Introduces `#2 <https://github.com/KnightConan/pyckage-cookiecutter/pull/2>`_:
+* Introduces `#2 <https://github.com/zhiwei2017/pyckage-cookiecutter/pull/2>`_:
 
   * Requirements rearrangement:
 
@@ -43,18 +43,18 @@ Welcome to **0.1.0** release, which is now at the master branch in the Gitlab re
 -----
 *Features:*
 
-* Introduces `#4 <https://github.com/KnightConan/pyckage-cookiecutter/pull/4>`_:
+* Introduces `#4 <https://github.com/zhiwei2017/pyckage-cookiecutter/pull/4>`_:
 
   + Update documentation for release notes
   + Add more tags in ``pyproject.toml``
 
-* Introduces `#5 <https://github.com/KnightConan/pyckage-cookiecutter/pull/5>`_:
+* Introduces `#5 <https://github.com/zhiwei2017/pyckage-cookiecutter/pull/5>`_:
 
   + Add sphinx.yml for github pages publishing
   + Adjust documentation in ``README.rst`` for how to setup CI/CD pipelines in different platforms
   + Add Acknowledgements section in ``README.rst``
 
-* Introduces `#7 <https://github.com/KnightConan/pyckage-cookiecutter/pull/7>`_:
+* Introduces `#7 <https://github.com/zhiwei2017/pyckage-cookiecutter/pull/7>`_:
 
   + Add twine check in ``test_bake_project.py`` and github actions for pull requests or pushes to master/develop branches
   + Add twine check step in all pipelines in the cookiecutter template
