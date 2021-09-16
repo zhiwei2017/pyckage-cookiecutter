@@ -7,7 +7,7 @@ Versioning
 
 We use `SemVer <http://semver.org/>`_ for versioning. For the versions available, see the `the project tags <https://github.com/zhiwei2017/pyckage-cookiecutter/tags>`_.
 
-0.1.0
+`0.1.0 <https://github.com/zhiwei2017/pyckage-cookiecutter/releases/tag/v0.1.0>`_
 -----
 
 Welcome to **0.1.0** release, which is now at the master branch in the Gitlab repository at `Pyckage Cookiecutter <https://github.com/zhiwei2017/pyckage-cookiecutter>`_
@@ -16,7 +16,7 @@ Welcome to **0.1.0** release, which is now at the master branch in the Gitlab re
 
 * Introduces `#1 <https://github.com/zhiwei2017/pyckage-cookiecutter/pull/1>`_: Initial implementation of pyckage cookiecutter.
 
-0.1.1
+`0.1.1 <https://github.com/zhiwei2017/pyckage-cookiecutter/releases/tag/v0.1.1>`_
 -----
 
 *Features:*
@@ -39,7 +39,7 @@ Welcome to **0.1.0** release, which is now at the master branch in the Gitlab re
     2. fix muted failed version import in setup.py
     3. fix broken setup.py because of requirements rearrangement
 
-0.2.0
+`0.2.0 <https://github.com/zhiwei2017/pyckage-cookiecutter/releases/tag/v0.2.0>`_
 -----
 *Features:*
 
@@ -61,3 +61,20 @@ Welcome to **0.1.0** release, which is now at the master branch in the Gitlab re
   + Update corresponding section in ``README.rst`` at root and adapt ``README.rst`` with additional configuration information for pipelines
   + Add missing linting checks in github actions file in cookiecutter template
   + Add whl file extension for twine upload
+
+`0.2.1 <https://github.com/zhiwei2017/pyckage-cookiecutter/releases/tag/v0.2.1>`_
+-----
+*Features:*
+
+* Introduces `#8 <https://github.com/zhiwei2017/pyckage-cookiecutter/pull/8>`_:
+
+    + Update project structure section with new github actions configuration files in ``README.rst``
+    + Update project links and author links
+
+* Introduces `#9 <https://github.com/zhiwei2017/pyckage-cookiecutter/pull/9>`_:
+
+    + Fix issue, where the doc requirements is referenced with a wrong file name
+    + Merge github actions file ``build.yml`` to ``main.yml`` and rename ``main.yml`` to ``test.yml``
+    + Add ``version.py`` in ``setup.cfg`` as bump2version files to simplify the deployment
+    + Correct wrong documentation header in ``index.rst``
+    + Fix wrong path issue for windows users while building docs in ``make.bat``
