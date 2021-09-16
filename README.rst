@@ -7,8 +7,8 @@ Pyckage Cookiecutter
     :alt: Documentation Status
 
 .. actions building badge
-.. image:: https://github.com/KnightConan/pyckage-cookiecutter/workflows/Unit%20Test%20&%20Build%20Test/badge.svg
-    :target: https://github.com/KnightConan/pyckage-cookiecutter/actions
+.. image:: https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&%20Build%20Test/badge.svg
+    :target: https://github.com/zhiwei2017/pyckage-cookiecutter/actions
 
 .. pypi version badge
 .. image:: https://img.shields.io/pypi/v/pyckage-cookiecutter.svg
@@ -60,7 +60,7 @@ First, get cookiecutter_. Trust me, it's awesome::
 
 Now run it against this repo::
 
-     $ cookiecutter https://github.com/KnightConan/pyckage-cookiecutter
+     $ cookiecutter https://github.com/zhiwei2017/pyckage-cookiecutter
 
 You'll be prompted for some values. Provide them, then a project will be created for you.
 
@@ -107,8 +107,9 @@ Your repo should have the following structure::
     reddit
     ├── .github                         - github actions configurations
     │   └── workflows
-    │       ├── main.yml                - pipelines for master, develop and pull requests
-    │       └── release.yml             - pipelines for release with tags
+    │       ├── test.yml                - pipelines for linting checks and testing
+    │       ├── release.yml             - pipelines for releases with tags
+    │       └── sphinx.yml              - pipelines for publishing github pages
     ├── docs                            - sphinx documentation
     │   ├── Makefile                    - Makefile defines terminal commands for sphinx documentation
     │   └── source                      - documentation source folder
@@ -123,6 +124,10 @@ Your repo should have the following structure::
     │       └── index.rst
     ├── reddit
     │   └── version.py                  - version information
+    ├── requirements                    - package dependencies
+    │   ├── base.txt                    - base dependencies
+    │   ├── doc.txt                     - documentation dependencies
+    │   └── dev.txt                     - tests dependencies
     ├── tests                           - tests
     │   ├── resources                   - resources used in tests
     │   ├── conftest.py                 - fixtures in tests
@@ -133,10 +138,6 @@ Your repo should have the following structure::
     ├── Makefile                        - predefined terminal commands
     ├── MANIFEST.in                     - commands, one per line, instructing setuptools to add or remove some set of files from the sdis
     ├── README.rst                      - package information
-    ├── requirements                    - package dependencies
-    │   ├── base.txt                    - base dependencies
-    │   ├── doc.txt                     - documentation dependencies
-    │   └── dev.txt                     - tests dependencies
     ├── setup.cfg                       - configurations for mypy, bandit, pytest etc. Centralizing all the configurations to one place.
     ├── setup.py                        - package installation configuration
     └── tox.ini                         - run tests with multiple python versions
@@ -176,15 +177,15 @@ Content
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | flake8 check                                 | + **Pushes** to *master/develop* branches        |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
-| main.yml    | bandit check                                 | + **Pull Requests** to *master/develop* branches |                                                                        |
+| test.yml    | bandit check                                 | + **Pull Requests** to *master/develop* branches |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | test with python 3.6 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | test with python 3.7 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | test with python 3.8 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
-+-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
-| build.yml   | twine check the built package                | **Pull Requests** to *master/develop* branches   |                                                                        |
+|             +----------------------------------------------+                                                  |                                                                        |
+|             | twine check the built package                |                                                  |                                                                        |
 +-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 |             |                                              |                                                  | TWINE_USERNAME                                                         |
 |             |                                              |                                                  +------------------------------------------------------------------------+
@@ -316,8 +317,8 @@ Special thanks to the project `cookiecutter-pypackage <https://github.com/audrey
 Author
 ------
 
-* `Zhiwei Zhang <https://github.com/KnightConan>`_ - *Author* / *Maintainer* - `zhiwei2017@gmail.com <mailto:zhiwei2017@gmail.com?subject=[GitHub]Pyckage%20Cookiecutter>`_
+* `Zhiwei Zhang <https://github.com/zhiwei2017>`_ - *Author* / *Maintainer* - `zhiwei2017@gmail.com <mailto:zhiwei2017@gmail.com?subject=[GitHub]Pyckage%20Cookiecutter>`_
 
 
 .. _cookiecutter: https://github.com/cookiecutter/cookiecutter
-.. _pyckage-cookiecutter: https://github.com/KnightConan/pyckage-cookiecutter
+.. _pyckage-cookiecutter: https://github.com/zhiwei2017/pyckage-cookiecutter

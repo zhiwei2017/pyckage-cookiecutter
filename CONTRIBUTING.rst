@@ -9,7 +9,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/KnightConan/pyckage-cookiecutter
+Report bugs at https://github.com/zhiwei2017/pyckage-cookiecutter
 
 If you are reporting a bug, please include:
 
@@ -40,7 +40,7 @@ Submit Feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at
-https://github.com/KnightConan/pyckage-cookiecutter/issues.
+https://github.com/zhiwei2017/pyckage-cookiecutter/issues.
 
 If you are proposing a new feature:
 
@@ -165,7 +165,7 @@ Deploying
 
 Assume that bump2version_ is installed. To deploy the package, just run::
 
-    $ bump2version patch pyproject.toml  # possible: major / minor / patch
+    $ bump2version patch  # possible: major / minor / patch
     $ git push
     $ git push --tags
 
@@ -173,5 +173,5 @@ Github Actions will do the rest.
 
 .. _virtualenv: https://virtualenv.pypa.io/en/stable/installation
 .. _git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-.. _pyckage-cookiecutter: https://github.com/KnightConan/pyckage-cookiecutter
+.. _pyckage-cookiecutter: https://github.com/zhiwei2017/pyckage-cookiecutter
 .. _bump2version: https://github.com/c4urself/bump2version
