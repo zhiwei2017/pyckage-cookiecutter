@@ -180,7 +180,7 @@
   <div class="section" id="pyckage-cookiecutter">
 <h1>Pyckage Cookiecutter<a class="headerlink" href="#pyckage-cookiecutter" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://pyckage-cookiecutter.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/pyckage-cookiecutter/badge/?version=latest" /></a>
-<a class="reference external image-reference" href="https://github.com/KnightConan/pyckage-cookiecutter/actions"><img alt="https://github.com/KnightConan/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" src="https://github.com/KnightConan/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" /></a>
+<a class="reference external image-reference" href="https://github.com/zhiwei2017/pyckage-cookiecutter/actions"><img alt="https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" src="https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="Python 3.6 | Python 3.7 | Python 3.8 | Python 3.9" src="https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg" /></a>
@@ -212,7 +212,7 @@ you will be able to quickly setup a buildable PyPi package.</p>
 </pre></div>
 </div>
 <p>Now run it against this repo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cookiecutter https://github.com/KnightConan/pyckage-cookiecutter
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cookiecutter https://github.com/zhiwei2017/pyckage-cookiecutter
 </pre></div>
 </div>
 <p>You’ll be prompted for some values. Provide them, then a project will be created for you.</p>
@@ -257,8 +257,9 @@ $ ls
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reddit
 ├── .github                         - github actions configurations
 │   └── workflows
-│       ├── main.yml                - pipelines for master, develop and pull requests
-│       └── release.yml             - pipelines for release with tags
+│       ├── test.yml                - pipelines for linting checks and testing
+│       ├── release.yml             - pipelines for releases with tags
+│       └── sphinx.yml              - pipelines for publishing github pages
 ├── docs                            - sphinx documentation
 │   ├── Makefile                    - Makefile defines terminal commands for sphinx documentation
 │   └── source                      - documentation source folder
@@ -273,6 +274,10 @@ $ ls
 │       └── index.rst
 ├── reddit
 │   └── version.py                  - version information
+├── requirements                    - package dependencies
+│   ├── base.txt                    - base dependencies
+│   ├── doc.txt                     - documentation dependencies
+│   └── dev.txt                     - tests dependencies
 ├── tests                           - tests
 │   ├── resources                   - resources used in tests
 │   ├── conftest.py                 - fixtures in tests
@@ -283,10 +288,6 @@ $ ls
 ├── Makefile                        - predefined terminal commands
 ├── MANIFEST.in                     - commands, one per line, instructing setuptools to add or remove some set of files from the sdis
 ├── README.rst                      - package information
-├── requirements                    - package dependencies
-│   ├── base.txt                    - base dependencies
-│   ├── doc.txt                     - documentation dependencies
-│   └── dev.txt                     - tests dependencies
 ├── setup.cfg                       - configurations for mypy, bandit, pytest etc. Centralizing all the configurations to one place.
 ├── setup.py                        - package installation configuration
 └── tox.ini                         - run tests with multiple python versions
@@ -331,14 +332,14 @@ which steps are included and how to configure them in different platforms.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td rowspan="6"><p>main.yml</p></td>
+<tr class="row-even"><td rowspan="7"><p>test.yml</p></td>
 <td><p>mypy check</p></td>
-<td rowspan="6"><ul class="simple">
+<td rowspan="7"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p><strong>Pull Requests</strong> to <em>master/develop</em> branches</p></li>
 </ul>
 </td>
-<td rowspan="6"></td>
+<td rowspan="7"></td>
 </tr>
 <tr class="row-odd"><td><p>flake8 check</p></td>
 </tr>
@@ -350,10 +351,7 @@ which steps are included and how to configure them in different platforms.</p>
 </tr>
 <tr class="row-odd"><td><p>test with python 3.8 (Ubuntu/Mac OS/Windows)</p></td>
 </tr>
-<tr class="row-even"><td><p>build.yml</p></td>
-<td><p>twine check the built package</p></td>
-<td><p><strong>Pull Requests</strong> to <em>master/develop</em> branches</p></td>
-<td></td>
+<tr class="row-even"><td><p>twine check the built package</p></td>
 </tr>
 <tr class="row-odd"><td rowspan="3"><p>release.yml</p></td>
 <td rowspan="3"><p>deploy to PyPi</p></td>
@@ -553,7 +551,7 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
 <div class="section" id="author">
 <h2>Author<a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/KnightConan">Zhiwei Zhang</a> - <em>Author</em> / <em>Maintainer</em> - <a class="reference external" href="mailto:zhiwei2017&#37;&#52;&#48;gmail&#46;com?subject=[GitHub]Pyckage%20Cookiecutter">zhiwei2017<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
+<li><p><a class="reference external" href="https://github.com/zhiwei2017">Zhiwei Zhang</a> - <em>Author</em> / <em>Maintainer</em> - <a class="reference external" href="mailto:zhiwei2017&#37;&#52;&#48;gmail&#46;com?subject=[GitHub]Pyckage%20Cookiecutter">zhiwei2017<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
 </ul>
 </div>
 </div>
