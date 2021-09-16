@@ -1,5 +1,5 @@
 ==============================================
-Welcome to SMC Shared's documentation!
+Welcome to the documentation of {{ cookiecutter.project_name }}!
 ==============================================
 
 Index

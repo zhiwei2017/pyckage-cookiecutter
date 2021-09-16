@@ -10,6 +10,7 @@ SHORT_DESCRIPTION = "{{cookiecutter.short_description}}"
 URL = "{{cookiecutter.project_url}}"
 AUTHOR = '{{cookiecutter.author}}'
 EMAIL = '{{cookiecutter.email}}'
+LICENSE = '{{cookiecutter.license}}'
 
 
 def _parse_requirements(filename):
@@ -42,7 +43,7 @@ except FileNotFoundError:
 INSTALL_REQUIRED = _parse_requirements(os.path.join("requirements", "base.txt"))
 # Optional requirements
 DEV_REQUIRED = _parse_requirements(os.path.join("requirements", "dev.txt"))
-DOC_REQUIRED = _parse_requirements(os.path.join("requirements", "dev.txt"))
+DOC_REQUIRED = _parse_requirements(os.path.join("requirements", "doc.txt"))
 
 # What packages are optional?
 EXTRAS = {"docs": DOC_REQUIRED}
@@ -55,6 +56,7 @@ setup(name=NAME,
       description=SHORT_DESCRIPTION,
       long_description=LONG_DESCRIPTION,
       long_description_content_type='text/x-rst',
+      license=LICENSE,
       url=URL,
       packages=find_packages(include=["{{cookiecutter.project_slug}}*"],
                              exclude=["tests*", "docs*"]),
