@@ -11,9 +11,8 @@ Index
    02_installation
    03_usage
    04_source
-   05_release_notes
-   06_authors
-   07_contributing
+   05_authors
+   06_contributing
 
    
 Indices and tables
