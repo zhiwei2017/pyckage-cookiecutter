@@ -117,9 +117,8 @@ Your repo should have the following structure::
     │       ├── 02_installation.rst
     │       ├── 03_usage.rst
     │       ├── 04_source.rst
-    │       ├── 05_release_notes.rst
-    │       ├── 06_authors.rst
-    │       ├── 07_contributing.rst
+    │       ├── 05_authors.rst
+    │       ├── 06_contributing.rst
     │       ├── conf.py                 - sphinx configuration file
     │       └── index.rst
     ├── reddit
