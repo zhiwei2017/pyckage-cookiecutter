@@ -9,9 +9,8 @@ Index
 
    01_about
    02_prompts
-   03_release_notes
-   04_core_team
-   05_contributing
+   03_core_team
+   04_contributing
 
    
 Indices and tables
