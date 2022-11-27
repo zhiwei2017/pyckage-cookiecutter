@@ -1,6 +1,6 @@
 Apache License
 
-Copyright (C) {% now 'utc', '%Y' %} {{cookiecutter.author}}
+Copyright (C) {% now 'utc', '%Y' %}-present {{cookiecutter.author}}
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
