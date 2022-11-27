@@ -179,22 +179,19 @@ Content
 |             +----------------------------------------------+                                                  |                                                                        |
 | test.yml    | bandit check                                 | + **Pull Requests** to *master/develop* branches |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
-|             | test with python 3.6 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
-|             +----------------------------------------------+                                                  |                                                                        |
 |             | test with python 3.7 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | test with python 3.8 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
+|             | test with python 3.9 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
+|             +----------------------------------------------+                                                  |                                                                        |
+|             | test with python 3.10 (Ubuntu/Mac OS/Windows)|                                                  |                                                                        |
+|             +----------------------------------------------+                                                  |                                                                        |
 |             | twine check the built package                |                                                  |                                                                        |
 +-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 |             |                                              |                                                  | TWINE_USERNAME                                                         |
-|             |                                              |                                                  +------------------------------------------------------------------------+
-| release.yml | deploy to PyPi                               | **Pushes** to tags matching *vXX.XX.XX*          | TWINE_PASSWORD                                                         |
-|             |                                              |                                                  +------------------------------------------------------------------------+
-|             |                                              |                                                  | TWINE_REPOSITORY_URL                                                   |
-|             |                                              |                                                  |                                                                        |
-|             |                                              |                                                  | * https://test.pypi.org/legacy/ for uploading to test version PyPi     |
-|             |                                              |                                                  | * https://upload.pypi.org/legacy/ for uploading to test version PyPi   |
+| release.yml | deploy to PyPi                               | **Pushes** to tags matching *vXX.XX.XX*          +------------------------------------------------------------------------+
+|             |                                              |                                                  | TWINE_PASSWORD                                                         |
 +-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 | sphinx.yml  | deploy GitHub pages                          | **Pushes** to *master* branch                    |                                                                        |
 +-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
@@ -232,22 +229,19 @@ Content
 |             +---------------------------------+                                                  |                                                                        |
 |             | bandit check                    | + Any **Merge Requests**                         |                                                                        |
 +-------------+---------------------------------+                                                  +------------------------------------------------------------------------+
-|             | test with python 3.6            |                                                  |                                                                        |
+|             | test with python 3.7            |                                                  |                                                                        |
 |             +---------------------------------+                                                  |                                                                        |
-| test        | test with python 3.7            |                                                  |                                                                        |
+| test        | test with python 3.8            |                                                  |                                                                        |
 |             +---------------------------------+                                                  |                                                                        |
-|             | test with python 3.8            |                                                  |                                                                        |
+|             | test with python 3.9            |                                                  |                                                                        |
+|             +---------------------------------+                                                  |                                                                        |
+|             | test with python 3.10           |                                                  |                                                                        |
 +-------------+---------------------------------+                                                  +------------------------------------------------------------------------+
 | build       | twine check the built package   |                                                  |                                                                        |
 +-------------+---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 |             |                                 |                                                  | TWINE_USERNAME                                                         |
-|             |                                 |                                                  +------------------------------------------------------------------------+
-| deploy      | deploy to PyPi                  | **Pushes** to tags matching *vXX.XX.XX*          | TWINE_PASSWORD                                                         |
-|             |                                 |                                                  +------------------------------------------------------------------------+
-|             |                                 |                                                  | TWINE_REPOSITORY_URL                                                   |
-|             |                                 |                                                  |                                                                        |
-|             |                                 |                                                  | * https://test.pypi.org/legacy/ for uploading to test version PyPi     |
-|             |                                 |                                                  | * https://upload.pypi.org/legacy/ for uploading to test version PyPi   |
+| deploy      | deploy to PyPi                  | **Pushes** to tags matching *vXX.XX.XX*          +------------------------------------------------------------------------+
+|             |                                 |                                                  | TWINE_PASSWORD                                                         |
 +-------------+---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 
 Setup Steps
@@ -281,22 +275,19 @@ Content
 +---------------------------------+                                                  |                                                                        |
 | bandit check                    | + Any **Pull Requests**                          |                                                                        |
 +---------------------------------+                                                  |                                                                        |
-| test with python 3.6            |                                                  |                                                                        |
-+---------------------------------+                                                  |                                                                        |
 | test with python 3.7            |                                                  |                                                                        |
 +---------------------------------+                                                  |                                                                        |
 | test with python 3.8            |                                                  |                                                                        |
 +---------------------------------+                                                  |                                                                        |
+| test with python 3.9            |                                                  |                                                                        |
++---------------------------------+                                                  |                                                                        |
+| test with python 3.10           |                                                  |                                                                        |
++---------------------------------+                                                  |                                                                        |
 | twine check the built package   |                                                  |                                                                        |
 +---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 |                                 |                                                  | TWINE_USERNAME                                                         |
-|                                 |                                                  +------------------------------------------------------------------------+
-| deploy to PyPi                  | **Pushes** to tags matching *vXX.XX.XX*          | TWINE_PASSWORD                                                         |
-|                                 |                                                  +------------------------------------------------------------------------+
-|                                 |                                                  | TWINE_REPOSITORY_URL                                                   |
-|                                 |                                                  |                                                                        |
-|                                 |                                                  | * https://test.pypi.org/legacy/ for uploading to test version PyPi     |
-|                                 |                                                  | * https://upload.pypi.org/legacy/ for uploading to test version PyPi   |
+| deploy to PyPi                  | **Pushes** to tags matching *vXX.XX.XX*          +------------------------------------------------------------------------+
+|                                 |                                                  | TWINE_PASSWORD                                                         |
 +---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 
 Setup Steps
@@ -308,6 +299,33 @@ Setup Steps
 4. Input the name and value of a CI/CD variable.
 
     You need to enable pipelines before adding a new variable for the first time.
+
+Makefile
+++++++++
+
+.. list-table::
+   :header-rows: 1
+
+   * - Command
+     - Description
+   * - clean
+     - Remove autogenerated folders and artifacts.
+   * - clean-pyc
+     - Remove python artifacts.
+   * - clean-build
+     - Remove build artifacts.
+   * - bandit
+     - Install and run `bandit`_ security analysis.
+   * - mypy
+     - Install and run `mypy`_ type checking.
+   * - flake8
+     - Install and run `flake8`_ linting.
+   * - install_requirements
+     - Install all the packages listed in txt files in requirements folder.
+   * - test
+     - Run tests and generate coverage report.
+   * - build_whl
+     - Build wheel package and upload it to internal PyPi index.
 
 Acknowledgements
 ----------------
