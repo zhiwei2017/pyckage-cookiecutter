@@ -38,8 +38,3 @@ Maintainers
     Format: **Name** - *Role/Responsibility* - Email
 
 * **{{cookiecutter.author}}** - *Maintainer* - `{{cookiecutter.email}} <mailto:{{cookiecutter.email}}?subject=[{{cookiecutter.ci_tool}}]{{ cookiecutter.project_name | replace(" ", "%20") }}>`_
-
-.. _bandit: https://bandit.readthedocs.io/en/latest/
-.. _mypy: https://github.com/python/mypy
-.. _flake8: https://gitlab.com/pycqa/flake8
-.. _pytest: https://docs.pytest.org/en/stable/

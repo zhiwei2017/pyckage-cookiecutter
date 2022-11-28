@@ -337,5 +337,9 @@ Author
 * `Zhiwei Zhang <https://github.com/zhiwei2017>`_ - *Author* / *Maintainer* - `zhiwei2017@gmail.com <mailto:zhiwei2017@gmail.com?subject=[GitHub]Pyckage%20Cookiecutter>`_
 
 
+.. _bandit: https://bandit.readthedocs.io/en/latest/
+.. _mypy: https://github.com/python/mypy
+.. _flake8: https://gitlab.com/pycqa/flake8
+.. _pytest: https://docs.pytest.org/en/stable/
 .. _cookiecutter: https://github.com/cookiecutter/cookiecutter
 .. _pyckage-cookiecutter: https://github.com/zhiwei2017/pyckage-cookiecutter
