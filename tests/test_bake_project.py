@@ -54,9 +54,10 @@ def test_bake_project(cookies, context, context_override):
                          [("linting:flake8", ["make ${LINTING_PKG}"]),
                           ("linting:mypy", ["make ${LINTING_PKG}"]),
                           ("linting:bandit", ["make ${LINTING_PKG}"]),
-                          ("test:3.6", ["make test"]),
                           ("test:3.7", ["make test"]),
-                          ("test:3.8", ["make test"])])
+                          ("test:3.8", ["make test"]),
+                          ("test:3.9", ["make test"]),
+                          ("test:3.10", ["make test"])])
 def test_gitlab_invokes_linting_and_pytest(cookies, context, stage,
                                            expected_test_script):
     context.update({"ci_tool": "GitLab"})

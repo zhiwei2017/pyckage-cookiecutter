@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Pyckage Cookiecutter"
+name = "Pyckage-Cookiecutter"
 version = "0.1.0"
 description = "This projects consist of a cookiecutter template that generates a full structure for a creating a PyPi standard package."
 authors = ["Zhiwei Zhang <zhiwei2017@gmail.com>"]
@@ -7,7 +7,7 @@ readme = "README.rst"
 license = "MIT"
 repository = "https://github.com/zhiwei2017/pyckage-cookiecutter"
 documentation = "https://zhiwei2017.github.io/pyckage-cookiecutter/"
-keywords = ['cookiecutter template', 'python36', 'python37', 'python38', 'github-actions', 'gitlab-ci', 'bitbucket-pipelines']
+keywords = ['cookiecutter template', 'python37', 'python38', 'python39', 'python310', 'github-actions', 'gitlab-ci', 'bitbucket-pipelines']
 packages = [
   {include = "pyckage_cookiecutter"}
 ]
@@ -19,19 +19,19 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.6"
-cookiecutter = "~1.7"
+python = "^3.7"
+cookiecutter = "~2.1"
 
 [tool.poetry.dev-dependencies]
 bandit = "~1.7"
-flake8 = "~3.8"
-mypy = "~0.910"
-pytest = "~5.0"
-pytest-cookies = "~0.5"
+flake8 = "~5.0"
+mypy = "~0.991"
+pytest = "~7.2"
+pytest-cookies = "~0.6"
 pytest-instafail = "~0.4"
-pyyaml = "~5.3"
+pyyaml = "~6.0"
 sh = "~1.14"
-tox = "~3.20"
+tox = "~3.27"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

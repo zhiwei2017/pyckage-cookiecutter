@@ -3,7 +3,7 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: python:3.8
+image: python:3.10
 
 definitions:
   steps:
@@ -49,16 +49,19 @@ pipelines:
           - step: *bandit-check
       - parallel:
           - step:
-              image: python:3.6
-              <<: *test-step
-          - step:
               image: python:3.7
               <<: *test-step
           - step:
               image: python:3.8
               <<: *test-step
+          - step:
+              image: python:3.9
+              <<: *test-step
+          - step:
+              image: python:3.10
+              <<: *test-step
       - step:
-          image: python:3.8
+          image: python:3.10
           <<: *build-step
   branches:
     "{master,develop}":
@@ -68,16 +71,19 @@ pipelines:
           - step: *bandit-check
       - parallel:
           - step:
-              image: python:3.6
-              <<: *test-step
-          - step:
               image: python:3.7
               <<: *test-step
           - step:
               image: python:3.8
               <<: *test-step
+          - step:
+              image: python:3.9
+              <<: *test-step
+          - step:
+              image: python:3.10
+              <<: *test-step
       - step:
-          image: python:3.8
+          image: python:3.10
           <<: *build-step
   tags:
     "v*":   # release tag
@@ -89,4 +95,3 @@ pipelines:
                 PYPI_USERNAME: $TWINE_USERNAME
                 PYPI_PASSWORD: $TWINE_PASSWORD
                 DISTRIBUTIONS: 'bdist_wheel'
-                REPOSITORY: $TWINE_REPOSITORY_URL

@@ -10,7 +10,7 @@ variables:
 
 ############ START SHARED SCRIPTS ############
 .linting: &linting
-  image: python:3.8-buster
+  image: python:3.10-buster
   stage: linting
   script:
     - make ${LINTING_PKG}
@@ -51,14 +51,6 @@ linting:bandit:
 ############ END LINTING STAGE #############
 
 ############## START TEST STAGE ############
-test:3.6:
-  image: python:3.6-buster
-  <<: *test
-  only:
-    - master
-    - develop
-    - merge_requests
-
 test:3.7:
   image: python:3.7-buster
   <<: *test
@@ -74,11 +66,27 @@ test:3.8:
     - master
     - develop
     - merge_requests
+
+test:3.9:
+  image: python:3.9-buster
+  <<: *test
+  only:
+    - master
+    - develop
+    - merge_requests
+
+test:3.10:
+  image: python:3.10-buster
+  <<: *test
+  only:
+    - master
+    - develop
+    - merge_requests
 ############## END TEST STAGE ##############
 
 ############# START BUILD STAGE ############
 build:
-  image: python:3.8-buster
+  image: python:3.10-buster
   stage: build
   before_script:
     - apt update -y && apt install -y make curl
@@ -96,7 +104,7 @@ build:
 
 ############# START DEPLOY STAGE ############
 deploy:
-  image: python:3.8-buster
+  image: python:3.10-buster
   stage: deploy
   before_script:
     - apt update -y && apt install -y make curl
@@ -111,9 +119,6 @@ deploy:
         exit 1
       elif [ -z "${TWINE_PASSWORD}" ]; then
         echo "\033[1mTWINE_PASSWORD\033[0m is undefined."
-        exit 1
-      elif [ -z "${TWINE_REPOSITORY_URL}" ]; then
-        echo "\033[1mTWINE_REPOSITORY_URL\033[0m is undefined."
         exit 1
       fi
     - twine upload --cert /etc/ssl/certs/ca-certificates.crt --skip-existing dist/*.whl
