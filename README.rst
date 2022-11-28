@@ -324,7 +324,7 @@ Makefile
    * - test
      - Run tests and generate coverage report.
    * - build_whl
-     - Build wheel package and upload it to internal PyPi index.
+     - Build wheel package.
 
 Acknowledgements
 ----------------

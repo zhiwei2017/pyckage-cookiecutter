@@ -8,7 +8,6 @@ help:
 	@echo "clean-build            : Remove build artifacts."
 	@echo "install_requirements   : Install all the packages listed in txt files in requirements folder.";
 	@echo "test                   : Run tests and generate coverage report.";
-	@echo "upload_docs            : Upload built sphinx documentation.";
 
 # Clean the folder from build/test related folders
 clean: clean-build clean-pyc
