@@ -82,6 +82,14 @@ test:3.10:
     - master
     - develop
     - merge_requests
+
+test:3.11:
+  image: python:3.10-buster
+  <<: *test
+  only:
+    - master
+    - develop
+    - merge_requests
 ############## END TEST STAGE ##############
 
 ############# START BUILD STAGE ############
