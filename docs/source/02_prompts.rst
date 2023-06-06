@@ -1,12 +1,6 @@
 Prompts
 =======
 
-author:
-    This is you! The value goes into places like ``README.rst`` and such.
-
-email:
-    The email address you want to identify yourself within the project.
-
 project_name:
   Your project's human-readable name, capitals and spaces allowed.
 
@@ -17,6 +11,12 @@ project_slug:
 
 project_url:
     The url of your project hosted in gitlab or github.
+
+author:
+    This is you! The value goes into places like ``README.rst`` and such.
+
+email:
+    The email address you want to identify yourself within the project.
 
 short_description:
     Describes your project briefly and gets used in places like ``README.rst`` and ``setup.py``.
