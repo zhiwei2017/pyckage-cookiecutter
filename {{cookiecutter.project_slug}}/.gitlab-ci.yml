@@ -84,7 +84,7 @@ test:3.10:
     - merge_requests
 
 test:3.11:
-  image: python:3.10-buster
+  image: python:3.11-buster
   <<: *test
   only:
     - master
