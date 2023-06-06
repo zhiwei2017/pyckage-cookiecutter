@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pyckage Cookiecutter &mdash; Pyckage Cookiecutter 0.3.0 documentation</title>
+  <title>Pyckage Cookiecutter &mdash; Pyckage Cookiecutter 0.4.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,14 +29,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Pyckage Cookiecutter
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Pyckage Cookiecutter
           </a>
               <div class="version">
-                0.3.0
+                0.4.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +83,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Pyckage Cookiecutter</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/01_about.rst.txt" rel="nofollow"> View page source</a>
@@ -96,7 +100,7 @@
 <a class="reference external image-reference" href="https://github.com/zhiwei2017/pyckage-cookiecutter/actions"><img alt="https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" src="https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" /></a>
-<a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="Python 3.6 | Python 3.7 | Python 3.8 | Python 3.9" src="https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="Python 3.7 | Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11" src="https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg" /></a>
 <a class="reference external image-reference" href="https://badge.fury.io/py/pyckage-cookiecutter"><img alt="https://img.shields.io/pypi/format/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/format/pyckage-cookiecutter.svg" /></a>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
@@ -138,11 +142,11 @@ remote: Compressing objects: 100% (123/123), done.
 remote: Total 219 (delta 83), reused 181 (delta 69), pack-reused 0
 Receiving objects: 100% (219/219), 41.09 KiB | 1.71 MiB/s, done.
 Resolving deltas: 100% (83/83), done.
-author [John Doe]: John Doe
-email [john-doe@example.com]: john.doe@example.com
 project_name [My Awesome Project]: Reddit Clone
 project_slug [reddit_clone]: reddit
 project_url [https://github.com/example_project]: https://github.com/reddit-clone
+author [John Doe]: John Doe
+email [john-doe@example.com]: john.doe@example.com
 short_description [Behold My Awesome Project!]: A reddit clone.
 version [0.1.0]: 0.1.0
 Select license:
@@ -230,12 +234,6 @@ which steps are included and how to configure them in different platforms.</p>
 <section id="content">
 <h5>Content<a class="headerlink" href="#content" title="Permalink to this heading"></a></h5>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 7%" />
-<col style="width: 25%" />
-<col style="width: 28%" />
-<col style="width: 40%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Config File</p></th>
 <th class="head"><p>Steps</p></th>
@@ -244,14 +242,14 @@ which steps are included and how to configure them in different platforms.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td rowspan="8"><p>test.yml</p></td>
+<tr class="row-even"><td rowspan="9"><p>test.yml</p></td>
 <td><p>mypy check</p></td>
-<td rowspan="8"><ul class="simple">
+<td rowspan="9"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p><strong>Pull Requests</strong> to <em>master/develop</em> branches</p></li>
 </ul>
 </td>
-<td rowspan="8"></td>
+<td rowspan="9"></td>
 </tr>
 <tr class="row-odd"><td><p>flake8 check</p></td>
 </tr>
@@ -265,16 +263,18 @@ which steps are included and how to configure them in different platforms.</p>
 </tr>
 <tr class="row-even"><td><p>test with python 3.10 (Ubuntu/Mac OS/Windows)</p></td>
 </tr>
-<tr class="row-odd"><td><p>twine check the built package</p></td>
+<tr class="row-odd"><td><p>test with python 3.11 (Ubuntu/Mac OS/Windows)</p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><p>release.yml</p></td>
+<tr class="row-even"><td><p>twine check the built package</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>release.yml</p></td>
 <td rowspan="2"><p>deploy to PyPi</p></td>
 <td rowspan="2"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
 <td><p>TWINE_USERNAME</p></td>
 </tr>
-<tr class="row-odd"><td><p>TWINE_PASSWORD</p></td>
+<tr class="row-even"><td><p>TWINE_PASSWORD</p></td>
 </tr>
-<tr class="row-even"><td><p>sphinx.yml</p></td>
+<tr class="row-odd"><td><p>sphinx.yml</p></td>
 <td><p>deploy GitHub pages</p></td>
 <td><p><strong>Pushes</strong> to <em>master</em> branch</p></td>
 <td></td>
@@ -308,12 +308,6 @@ $ git push origin gh-pages
 <section id="id2">
 <h5>Content<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h5>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 20%" />
-<col style="width: 30%" />
-<col style="width: 43%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Stages</p></th>
 <th class="head"><p>Steps</p></th>
@@ -324,7 +318,7 @@ $ git push origin gh-pages
 <tbody>
 <tr class="row-even"><td rowspan="3"><p>linting</p></td>
 <td><p>mypy check</p></td>
-<td rowspan="8"><ul class="simple">
+<td rowspan="9"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p>Any <strong>Merge Requests</strong></p></li>
 </ul>
@@ -335,9 +329,9 @@ $ git push origin gh-pages
 </tr>
 <tr class="row-even"><td><p>bandit check</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="4"><p>test</p></td>
+<tr class="row-odd"><td rowspan="5"><p>test</p></td>
 <td><p>test with python 3.7</p></td>
-<td rowspan="4"></td>
+<td rowspan="5"></td>
 </tr>
 <tr class="row-even"><td><p>test with python 3.8</p></td>
 </tr>
@@ -345,16 +339,18 @@ $ git push origin gh-pages
 </tr>
 <tr class="row-even"><td><p>test with python 3.10</p></td>
 </tr>
-<tr class="row-odd"><td><p>build</p></td>
+<tr class="row-odd"><td><p>test with python 3.11</p></td>
+</tr>
+<tr class="row-even"><td><p>build</p></td>
 <td><p>twine check the built package</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><p>deploy</p></td>
+<tr class="row-odd"><td rowspan="2"><p>deploy</p></td>
 <td rowspan="2"><p>deploy to PyPi</p></td>
 <td rowspan="2"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
 <td><p>TWINE_USERNAME</p></td>
 </tr>
-<tr class="row-odd"><td><p>TWINE_PASSWORD</p></td>
+<tr class="row-even"><td><p>TWINE_PASSWORD</p></td>
 </tr>
 </tbody>
 </table>
@@ -382,11 +378,6 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
 <section id="id4">
 <h5>Content<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h5>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 32%" />
-<col style="width: 46%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Steps</p></th>
 <th class="head"><p>Trigger Rules</p></th>
@@ -395,12 +386,12 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
 </thead>
 <tbody>
 <tr class="row-even"><td><p>mypy check</p></td>
-<td rowspan="8"><ul class="simple">
+<td rowspan="9"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p>Any <strong>Pull Requests</strong></p></li>
 </ul>
 </td>
-<td rowspan="8"></td>
+<td rowspan="9"></td>
 </tr>
 <tr class="row-odd"><td><p>flake8 check</p></td>
 </tr>
@@ -414,13 +405,15 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
 </tr>
 <tr class="row-even"><td><p>test with python 3.10</p></td>
 </tr>
-<tr class="row-odd"><td><p>twine check the built package</p></td>
+<tr class="row-odd"><td><p>test with python 3.11</p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><p>deploy to PyPi</p></td>
+<tr class="row-even"><td><p>twine check the built package</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>deploy to PyPi</p></td>
 <td rowspan="2"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
 <td><p>TWINE_USERNAME</p></td>
 </tr>
-<tr class="row-odd"><td><p>TWINE_PASSWORD</p></td>
+<tr class="row-even"><td><p>TWINE_PASSWORD</p></td>
 </tr>
 </tbody>
 </table>
@@ -443,10 +436,6 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
 <section id="makefile">
 <h3>Makefile<a class="headerlink" href="#makefile" title="Permalink to this heading"></a></h3>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
 <th class="head"><p>Description</p></th>
@@ -507,7 +496,7 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Zhiwei Zhang.</p>
+    <p>&#169; Copyright 2023, Zhiwei Zhang.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
