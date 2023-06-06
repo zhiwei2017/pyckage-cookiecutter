@@ -14,11 +14,6 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import datetime
-import os
-import sys
-
-root_path = os.path.abspath('../..')
-sys.path.insert(0, root_path)
 
 # -- Project information -----------------------------------------------------
 
@@ -28,10 +23,7 @@ copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
 
 # The short X.Y version
-local_vars = dict()
-version_path = os.path.join(root_path, "{{cookiecutter.project_slug}}", "version.py")
-exec(open(version_path).read(), local_vars)
-version = local_vars["__version__"]
+version = "{{ cookiecutter.version }}"
 # The full version, including alpha/beta/rc tags
 release = version
 
@@ -75,7 +67,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = "en"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

@@ -60,6 +60,9 @@ pipelines:
           - step:
               image: python:3.10
               <<: *test-step
+          - step:
+              image: python:3.11
+              <<: *test-step
       - step:
           image: python:3.10
           <<: *build-step
@@ -81,6 +84,9 @@ pipelines:
               <<: *test-step
           - step:
               image: python:3.10
+              <<: *test-step
+          - step:
+              image: python:3.11
               <<: *test-step
       - step:
           image: python:3.10

@@ -1,9 +1,9 @@
 {
-    "author": "John Doe",
-    "email": "{{ cookiecutter.author.lower()|replace(' ', '.') }}@email.com",
     "project_name": "My Awesome Project",
     "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
     "project_url": "https://github.com/example_project",
+    "author": "John Doe",
+    "email": "{{ cookiecutter.author.lower()|replace(' ', '.') }}@email.com",
     "short_description": "Behold My Awesome Project!",
     "version": "0.1.0",
     "license": [

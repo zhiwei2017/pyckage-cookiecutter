@@ -21,7 +21,7 @@ Pyckage Cookiecutter
 .. python version badge from PyPI
 .. image:: https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg
     :target: https://pypi.python.org/pypi/pyckage-cookiecutter/
-    :alt: Python 3.6 | Python 3.7 | Python 3.8 | Python 3.9
+    :alt: Python 3.7 | Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11
 
 .. pypi format
 .. image:: https://img.shields.io/pypi/format/pyckage-cookiecutter.svg
@@ -75,11 +75,11 @@ Answer the prompts with your own desired `Prompts <https://pyckage-cookiecutter.
     remote: Total 219 (delta 83), reused 181 (delta 69), pack-reused 0
     Receiving objects: 100% (219/219), 41.09 KiB | 1.71 MiB/s, done.
     Resolving deltas: 100% (83/83), done.
-    author [John Doe]: John Doe
-    email [john-doe@example.com]: john.doe@example.com
     project_name [My Awesome Project]: Reddit Clone
     project_slug [reddit_clone]: reddit
     project_url [https://github.com/example_project]: https://github.com/reddit-clone
+    author [John Doe]: John Doe
+    email [john-doe@example.com]: john.doe@example.com
     short_description [Behold My Awesome Project!]: A reddit clone.
     version [0.1.0]: 0.1.0
     Select license:
@@ -186,6 +186,8 @@ Content
 |             +----------------------------------------------+                                                  |                                                                        |
 |             | test with python 3.10 (Ubuntu/Mac OS/Windows)|                                                  |                                                                        |
 |             +----------------------------------------------+                                                  |                                                                        |
+|             | test with python 3.11 (Ubuntu/Mac OS/Windows)|                                                  |                                                                        |
+|             +----------------------------------------------+                                                  |                                                                        |
 |             | twine check the built package                |                                                  |                                                                        |
 +-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
 |             |                                              |                                                  | TWINE_USERNAME                                                         |
@@ -235,6 +237,8 @@ Content
 |             | test with python 3.9            |                                                  |                                                                        |
 |             +---------------------------------+                                                  |                                                                        |
 |             | test with python 3.10           |                                                  |                                                                        |
+|             +---------------------------------+                                                  |                                                                        |
+|             | test with python 3.11           |                                                  |                                                                        |
 +-------------+---------------------------------+                                                  +------------------------------------------------------------------------+
 | build       | twine check the built package   |                                                  |                                                                        |
 +-------------+---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
@@ -281,6 +285,8 @@ Content
 | test with python 3.9            |                                                  |                                                                        |
 +---------------------------------+                                                  |                                                                        |
 | test with python 3.10           |                                                  |                                                                        |
++---------------------------------+                                                  |                                                                        |
+| test with python 3.11           |                                                  |                                                                        |
 +---------------------------------+                                                  |                                                                        |
 | twine check the built package   |                                                  |                                                                        |
 +---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
