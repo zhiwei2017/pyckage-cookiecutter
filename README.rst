@@ -114,11 +114,9 @@ Your repo should have the following structure::
     │   ├── Makefile                    - Makefile defines terminal commands for sphinx documentation
     │   └── source                      - documentation source folder
     │       ├── 01_about.rst
-    │       ├── 02_installation.rst
-    │       ├── 03_usage.rst
-    │       ├── 04_source.rst
-    │       ├── 05_authors.rst
-    │       ├── 06_contributing.rst
+    │       ├── 02_source.rst
+    │       ├── 03_authors.rst
+    │       ├── 04_contributing.rst
     │       ├── conf.py                 - sphinx configuration file
     │       └── index.rst
     ├── reddit
@@ -138,8 +136,7 @@ Your repo should have the following structure::
     ├── MANIFEST.in                     - commands, one per line, instructing setuptools to add or remove some set of files from the sdis
     ├── README.rst                      - package information
     ├── setup.cfg                       - configurations for mypy, bandit, pytest etc. Centralizing all the configurations to one place.
-    ├── setup.py                        - package installation configuration
-    └── tox.ini                         - run tests with multiple python versions
+    └── setup.py                        - package installation configuration
 
 If you want to use CI/CD pipeline for uploading your package to PyPi, please check the section **CI/CD configuration**.
 
