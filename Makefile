@@ -21,5 +21,5 @@ clean-build:
 
 # Install requirements for testing and run tests
 test:
-	python3 -m pip install -r requirements/dev.txt
-	python3 -m pytest --instafail
+	python3 -m poetry install
+	python3 -m poetry run pytest
