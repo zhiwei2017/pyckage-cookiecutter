@@ -32,6 +32,7 @@ bandit:
 
 # Install and run mypy type checking
 mypy:
+	python3 -m pip install mypy
 	python3 -m pip install -r requirements/dev.txt
 	python3 -m mypy $(SOURCE_DIR)
 
