@@ -47,7 +47,7 @@ jobs:
         key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
     - name: Install dependencies
       run: |
-        poetry install --with dev
+        poetry install --with test
     - name: Test with pytest
       run: |
         poetry run pytest
@@ -76,9 +76,8 @@ jobs:
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
       - name: Install dependencies
         run: |
-          poetry self add twine
-          poetry install --no-interaction --no-root
+          poetry install --with test
       - name: Build and test publishing package
         run: |
           poetry build -f wheel
-          twine check dist/*.whl
+          poetry run twine check dist/*.whl

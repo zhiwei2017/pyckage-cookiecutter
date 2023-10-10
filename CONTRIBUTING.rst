@@ -99,7 +99,7 @@ virtualenv_ and git_ installed and ready to go.
 
         $ tox
 
-   If you are missing pytest and/or tox, just `poetry install` them into
+   If you are missing pytest and/or tox, just `poetry install --with test` them into
    your virtual environment.
 
 7. If your contribution is a bug fix or new feature, you may want to add a test
