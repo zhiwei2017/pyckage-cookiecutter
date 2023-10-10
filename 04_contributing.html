@@ -163,13 +163,6 @@ $<span class="w"> </span><span class="nb">source</span><span class="w"> </span>p
 </div>
 <p>Now you can make your changes locally.</p>
 </li>
-<li><p>When you’re done making changes, check that your changes pass all linting checks:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>flake8
-$<span class="w"> </span>make<span class="w"> </span>mypy
-$<span class="w"> </span>make<span class="w"> </span>bandit
-</pre></div>
-</div>
-</li>
 <li><p>The next step would be to run the test cases:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span><span class="nb">test</span>
 </pre></div>
@@ -180,7 +173,7 @@ tests across different versions of Python:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>tox
 </pre></div>
 </div>
-<p>If you are missing flake8, bandit, mypy, pytest and/or tox, just <cite>pip install</cite> them into
+<p>If you are missing pytest and/or tox, just <cite>poetry install –with test</cite> them into
 your virtual environment.</p>
 </li>
 <li><p>If your contribution is a bug fix or new feature, you may want to add a test
@@ -192,6 +185,8 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
 </pre></div>
 </div>
 </li>
+</ol>
+<ol class="arabic simple" start="10">
 <li><p>Submit a pull request through the <a class="reference external" href="pyckage-cookiecutter">GitHub</a> website.</p></li>
 </ol>
 </section>
@@ -202,7 +197,7 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
 <li><p>The pull request should include tests.</p></li>
 <li><p>If the pull request adds functionality, the docs should be updated. Put your
 new functionality into a function with a docstring.</p></li>
-<li><p>The pull request should work for Python 3.6, 3.7, and 3.8.</p></li>
+<li><p>The pull request should work for Python 3.8, 3.9, 3.10 and 3.11.</p></li>
 </ol>
 </section>
 <section id="add-a-new-test">
@@ -229,8 +224,9 @@ different Python versions:</p>
 </section>
 <section id="deploying">
 <h2>Deploying<a class="headerlink" href="#deploying" title="Permalink to this heading"></a></h2>
-<p>Assume that <a class="reference external" href="https://github.com/c4urself/bump2version">bump2version</a> is installed. To deploy the package, just run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bump2version patch  # possible: major / minor / patch
+<p>To deploy the package, just run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ poetry version patch  # possible: major / minor / patch / premajor / preminor / prepatch / prerelease
+$ git commit -m &quot;Bump version: &lt;old_version&gt; -&gt; &lt;new_version&gt;&quot;
 $ git push
 $ git push --tags
 </pre></div>

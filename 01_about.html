@@ -49,7 +49,6 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Pyckage Cookiecutter</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-use">How to Use</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tutorial">Tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ci-cd-pipelines">CI/CD Pipelines</a><ul>
@@ -100,7 +99,7 @@
 <a class="reference external image-reference" href="https://github.com/zhiwei2017/pyckage-cookiecutter/actions"><img alt="https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" src="https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" /></a>
-<a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="Python 3.7 | Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11" src="https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11" src="https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg" /></a>
 <a class="reference external image-reference" href="https://badge.fury.io/py/pyckage-cookiecutter"><img alt="https://img.shields.io/pypi/format/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/format/pyckage-cookiecutter.svg" /></a>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
@@ -110,31 +109,32 @@ template that generates a full structure for a creating a PyPi standard package.
 the name of the project, etc. As result you will obtain the
 complete file and folder structure to quickly start to code your package.</p>
 </section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
-<p>Please install the Python package <a class="reference external" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a> before using it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install cookiecutter
-</pre></div>
-</div>
-</section>
 <section id="how-to-use">
 <h2>How to Use<a class="headerlink" href="#how-to-use" title="Permalink to this heading"></a></h2>
 <section id="tutorial">
 <h3>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h3>
-<p>Let’s pretend you want to create a project called “redditclone”.
+<p>Let’s pretend you want to create a project called “feddit”.
 By using this template based on <a class="reference external" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>,
 you will be able to quickly setup a buildable PyPi package.</p>
 <p>First, get <a class="reference external" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>. Trust me, it’s awesome:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install cookiecutter
 </pre></div>
 </div>
+<p>or with <strong>poetry</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ poetry self add cookiecutter
+</pre></div>
+</div>
 <p>Now run it against this repo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cookiecutter https://github.com/zhiwei2017/pyckage-cookiecutter
 </pre></div>
 </div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ poetry run cookiecutter https://github.com/zhiwei2017/pyckage-cookiecutter
+</pre></div>
+</div>
 <p>You’ll be prompted for some values. Provide them, then a project will be created for you.</p>
-<p><strong>Warning</strong>: After this point, change ‘My Awesome Project’, ‘John Doe’, etc to your own information.</p>
-<p>Answer the prompts with your own desired <a class="reference external" href="https://pyckage-cookiecutter.readthedocs.io/en/latest/02_prompts.html">Prompts</a>. For example:</p>
+<p><strong>Warning</strong>: After this point, change ‘<em>My Awesome Project</em>’, ‘<em>John Doe</em>’, etc to your own information.</p>
+<p>Answer the prompts with your own desired <a class="reference external" href="https://zhiwei2017.github.io/pyckage-cookiecutter/02_prompts.html">Prompts</a>. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;pyckage-cookiecutter&#39;...
 remote: Enumerating objects: 219, done.
 remote: Counting objects: 100% (219/219), done.
@@ -142,12 +142,12 @@ remote: Compressing objects: 100% (123/123), done.
 remote: Total 219 (delta 83), reused 181 (delta 69), pack-reused 0
 Receiving objects: 100% (219/219), 41.09 KiB | 1.71 MiB/s, done.
 Resolving deltas: 100% (83/83), done.
-project_name [My Awesome Project]: Reddit Clone
-project_slug [reddit_clone]: reddit
-project_url [https://github.com/example_project]: https://github.com/reddit-clone
+project_name [My Awesome Project]: Fake Reddit API
+project_slug [fake_reddit_api]: feddit
+project_url [https://github.com/example_project]: https://github.com/feddit
 author [John Doe]: John Doe
 email [john-doe@example.com]: john.doe@example.com
-short_description [Behold My Awesome Project!]: A reddit clone.
+short_description [Behold My Awesome Project!]: A fake reddit API.
 version [0.1.0]: 0.1.0
 Select license:
 1 - MIT
@@ -166,12 +166,12 @@ Choose from 1, 2, 3, 4 [1]: 1
 </pre></div>
 </div>
 <p>Enter the project and take a look around:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd reddit/
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd feddit/
 $ ls
 </pre></div>
 </div>
 <p>Your repo should have the following structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reddit
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>feddit
 ├── .github                         - github actions configurations
 │   └── workflows
 │       ├── test.yml                - pipelines for linting checks and testing
@@ -181,14 +181,12 @@ $ ls
 │   ├── Makefile                    - Makefile defines terminal commands for sphinx documentation
 │   └── source                      - documentation source folder
 │       ├── 01_about.rst
-│       ├── 02_installation.rst
-│       ├── 03_usage.rst
-│       ├── 04_source.rst
-│       ├── 05_authors.rst
-│       ├── 06_contributing.rst
+│       ├── 02_source.rst
+│       ├── 03_authors.rst
+│       ├── 04_contributing.rst
 │       ├── conf.py                 - sphinx configuration file
 │       └── index.rst
-├── reddit
+├── feddit
 │   └── version.py                  - version information
 ├── requirements                    - package dependencies
 │   ├── base.txt                    - base dependencies
@@ -205,19 +203,26 @@ $ ls
 ├── MANIFEST.in                     - commands, one per line, instructing setuptools to add or remove some set of files from the sdis
 ├── README.rst                      - package information
 ├── setup.cfg                       - configurations for mypy, bandit, pytest etc. Centralizing all the configurations to one place.
-├── setup.py                        - package installation configuration
-└── tox.ini                         - run tests with multiple python versions
+└── setup.py                        - package installation configuration
 </pre></div>
 </div>
 <p>If you want to use CI/CD pipeline for uploading your package to PyPi, please check the section <strong>CI/CD configuration</strong>.</p>
 <p><strong>Note</strong>:</p>
 <ul>
-<li><p>This repo is built as a wheel package and uploaded to <a class="reference external" href="https://pypi.python.org/pypi/pyckage-cookiecutter/">PyPi</a>. You can install it through:</p>
+<li><p>This repo is built as a wheel package and uploaded to <a class="reference external" href="https://pypi.python.org/pypi/pyckage-cookiecutter/">PyPi</a>. You can install it through <strong>pip</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pyckage-cookiecutter
+</pre></div>
+</div>
+<p>or through <strong>poetry</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ poetry add pyckage-cookiecutter
 </pre></div>
 </div>
 <p>And start generating a new project by call:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pyckage_cookiecutter
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ poetry run pyckage_cookiecutter
 </pre></div>
 </div>
 <p>The rest is the same as the <a class="reference external" href="#tutorial">Tutorial</a> introduced.</p>
@@ -242,39 +247,37 @@ which steps are included and how to configure them in different platforms.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td rowspan="9"><p>test.yml</p></td>
+<tr class="row-even"><td rowspan="8"><p>test.yml</p></td>
 <td><p>mypy check</p></td>
-<td rowspan="9"><ul class="simple">
+<td rowspan="8"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p><strong>Pull Requests</strong> to <em>master/develop</em> branches</p></li>
 </ul>
 </td>
-<td rowspan="9"></td>
+<td rowspan="8"></td>
 </tr>
 <tr class="row-odd"><td><p>flake8 check</p></td>
 </tr>
 <tr class="row-even"><td><p>bandit check</p></td>
 </tr>
-<tr class="row-odd"><td><p>test with python 3.7 (Ubuntu/Mac OS/Windows)</p></td>
+<tr class="row-odd"><td><p>test with python 3.8 (Ubuntu/Mac OS/Windows)</p></td>
 </tr>
-<tr class="row-even"><td><p>test with python 3.8 (Ubuntu/Mac OS/Windows)</p></td>
+<tr class="row-even"><td><p>test with python 3.9 (Ubuntu/Mac OS/Windows)</p></td>
 </tr>
-<tr class="row-odd"><td><p>test with python 3.9 (Ubuntu/Mac OS/Windows)</p></td>
+<tr class="row-odd"><td><p>test with python 3.10 (Ubuntu/Mac OS/Windows)</p></td>
 </tr>
-<tr class="row-even"><td><p>test with python 3.10 (Ubuntu/Mac OS/Windows)</p></td>
+<tr class="row-even"><td><p>test with python 3.11 (Ubuntu/Mac OS/Windows)</p></td>
 </tr>
-<tr class="row-odd"><td><p>test with python 3.11 (Ubuntu/Mac OS/Windows)</p></td>
+<tr class="row-odd"><td><p>twine check the built package</p></td>
 </tr>
-<tr class="row-even"><td><p>twine check the built package</p></td>
-</tr>
-<tr class="row-odd"><td rowspan="2"><p>release.yml</p></td>
+<tr class="row-even"><td rowspan="2"><p>release.yml</p></td>
 <td rowspan="2"><p>deploy to PyPi</p></td>
 <td rowspan="2"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
 <td><p>TWINE_USERNAME</p></td>
 </tr>
-<tr class="row-even"><td><p>TWINE_PASSWORD</p></td>
+<tr class="row-odd"><td><p>TWINE_PASSWORD</p></td>
 </tr>
-<tr class="row-odd"><td><p>sphinx.yml</p></td>
+<tr class="row-even"><td><p>sphinx.yml</p></td>
 <td><p>deploy GitHub pages</p></td>
 <td><p><strong>Pushes</strong> to <em>master</em> branch</p></td>
 <td></td>
@@ -318,7 +321,7 @@ $ git push origin gh-pages
 <tbody>
 <tr class="row-even"><td rowspan="3"><p>linting</p></td>
 <td><p>mypy check</p></td>
-<td rowspan="9"><ul class="simple">
+<td rowspan="8"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p>Any <strong>Merge Requests</strong></p></li>
 </ul>
@@ -329,28 +332,26 @@ $ git push origin gh-pages
 </tr>
 <tr class="row-even"><td><p>bandit check</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="5"><p>test</p></td>
-<td><p>test with python 3.7</p></td>
-<td rowspan="5"></td>
+<tr class="row-odd"><td rowspan="4"><p>test</p></td>
+<td><p>test with python 3.8</p></td>
+<td rowspan="4"></td>
 </tr>
-<tr class="row-even"><td><p>test with python 3.8</p></td>
+<tr class="row-even"><td><p>test with python 3.9</p></td>
 </tr>
-<tr class="row-odd"><td><p>test with python 3.9</p></td>
+<tr class="row-odd"><td><p>test with python 3.10</p></td>
 </tr>
-<tr class="row-even"><td><p>test with python 3.10</p></td>
+<tr class="row-even"><td><p>test with python 3.11</p></td>
 </tr>
-<tr class="row-odd"><td><p>test with python 3.11</p></td>
-</tr>
-<tr class="row-even"><td><p>build</p></td>
+<tr class="row-odd"><td><p>build</p></td>
 <td><p>twine check the built package</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><p>deploy</p></td>
+<tr class="row-even"><td rowspan="2"><p>deploy</p></td>
 <td rowspan="2"><p>deploy to PyPi</p></td>
 <td rowspan="2"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
 <td><p>TWINE_USERNAME</p></td>
 </tr>
-<tr class="row-even"><td><p>TWINE_PASSWORD</p></td>
+<tr class="row-odd"><td><p>TWINE_PASSWORD</p></td>
 </tr>
 </tbody>
 </table>
@@ -386,34 +387,32 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
 </thead>
 <tbody>
 <tr class="row-even"><td><p>mypy check</p></td>
-<td rowspan="9"><ul class="simple">
+<td rowspan="8"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p>Any <strong>Pull Requests</strong></p></li>
 </ul>
 </td>
-<td rowspan="9"></td>
+<td rowspan="8"></td>
 </tr>
 <tr class="row-odd"><td><p>flake8 check</p></td>
 </tr>
 <tr class="row-even"><td><p>bandit check</p></td>
 </tr>
-<tr class="row-odd"><td><p>test with python 3.7</p></td>
+<tr class="row-odd"><td><p>test with python 3.8</p></td>
 </tr>
-<tr class="row-even"><td><p>test with python 3.8</p></td>
+<tr class="row-even"><td><p>test with python 3.9</p></td>
 </tr>
-<tr class="row-odd"><td><p>test with python 3.9</p></td>
+<tr class="row-odd"><td><p>test with python 3.10</p></td>
 </tr>
-<tr class="row-even"><td><p>test with python 3.10</p></td>
+<tr class="row-even"><td><p>test with python 3.11</p></td>
 </tr>
-<tr class="row-odd"><td><p>test with python 3.11</p></td>
+<tr class="row-odd"><td><p>twine check the built package</p></td>
 </tr>
-<tr class="row-even"><td><p>twine check the built package</p></td>
-</tr>
-<tr class="row-odd"><td rowspan="2"><p>deploy to PyPi</p></td>
+<tr class="row-even"><td rowspan="2"><p>deploy to PyPi</p></td>
 <td rowspan="2"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
 <td><p>TWINE_USERNAME</p></td>
 </tr>
-<tr class="row-even"><td><p>TWINE_PASSWORD</p></td>
+<tr class="row-odd"><td><p>TWINE_PASSWORD</p></td>
 </tr>
 </tbody>
 </table>
