@@ -92,20 +92,10 @@ virtualenv_ and git_ installed and ready to go.
 
         $ make test
 
-6. Before raising a pull request you should also run tox. This will run the
-   tests across different versions of Python:
-
-   .. code-block:: bash
-
-        $ tox
-
-   If you are missing pytest and/or tox, just `poetry install --with test` them into
-   your virtual environment.
-
-7. If your contribution is a bug fix or new feature, you may want to add a test
+6. If your contribution is a bug fix or new feature, you may want to add a test
    to the existing test suite. See section Add a New Test below for details.
 
-8. Commit your changes and push your branch to `GitHub <pyckage-cookiecutter>`_:
+7. Commit your changes and push your branch to `GitHub <pyckage-cookiecutter>`_:
 
    .. code-block:: bash
 
@@ -113,7 +103,7 @@ virtualenv_ and git_ installed and ready to go.
         $ git commit -m "Your detailed description of your changes."
         $ git push origin name-of-your-bugfix-or-feature
 
-10. Submit a pull request through the `GitHub <pyckage-cookiecutter>`_ website.
+8. Submit a pull request through the `GitHub <pyckage-cookiecutter>`_ website.
 
 Pull Request Guidelines
 -----------------------
@@ -144,13 +134,6 @@ To write and run your new test, follow these steps:
    .. code-block:: bash
 
         $ make test
-
-3. Run the tests with tox to ensure that the code changes work with
-   different Python versions:
-
-   .. code-block:: bash
-
-        $ tox
 
 Deploying
 ---------
