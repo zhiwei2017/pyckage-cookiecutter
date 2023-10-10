@@ -1,4 +1,4 @@
-name: github pages
+﻿name: github pages
 
 on:
   push:
@@ -29,12 +29,11 @@ jobs:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
       - name: Install dependencies
-        run: |
-          poetry install --with docs
+        run: poetry install --no-interaction --with docs
       - name: Build sphinx docs
         run: |
           cd docs
-          make html
+          poetry run make html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
