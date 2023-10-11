@@ -320,13 +320,13 @@ Makefile
    * - clean-build
      - Remove build artifacts.
    * - bandit
-     - Install and run `bandit`_ security analysis.
+     - Run `bandit`_ security analysis.
    * - mypy
-     - Install and run `mypy`_ type checking.
+     - Run `mypy`_ type checking.
    * - flake8
-     - Install and run `flake8`_ linting.
-   * - install_requirements
-     - Install all the packages listed in txt files in requirements folder.
+     - Rrun `flake8`_ linting.
+   * - install
+     - Install all the dependencies and the package itself.
    * - test
      - Run tests and generate coverage report.
    * - build_whl
