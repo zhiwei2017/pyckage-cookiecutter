@@ -23,11 +23,6 @@ python = "^3.8.1"
 cookiecutter = "~2.4"
 
 [tool.poetry.group.dev.dependencies]
-
-[tool.poetry.group.test]
-optional = true
-
-[tool.poetry.group.test.dependencies]
 pytest = "~7.4"
 pytest-cookies = "~0.7"
 pytest-instafail = "~0.5"
