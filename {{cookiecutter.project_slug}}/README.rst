@@ -5,12 +5,6 @@ Introduction
 ------------
 {{cookiecutter.short_description}}
 
-Prerequisites
--------------
-To install the dependencies listed in `requirements/base.txt`, you can use::
-
-    $ pip install -r requirements/base.txt
-
 User Guide
 ----------
 
@@ -25,6 +19,12 @@ To install {{ cookiecutter.project_name }}, run this command in your terminal:
 .. code-block:: console
 
     $ pip install {{ cookiecutter.project_slug }}
+
+or
+
+.. code-block:: console
+
+    $ poetry self add {{ cookiecutter.project_slug }}
 
 This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent stable release.
 
@@ -44,13 +44,13 @@ Once you have a copy of the source, you can install it with:
 
 .. code-block:: console
 
-    $ python setup.py install
+    $ pip install .
 
 or
 
 .. code-block:: console
 
-    $ pip install .
+    $ poetry install
 
 How to Use
 ++++++++++
