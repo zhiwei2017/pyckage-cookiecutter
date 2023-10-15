@@ -21,5 +21,5 @@ clean-build:
 
 # Install requirements for testing and run tests
 test:
-	python3 -m poetry install --with dev
+	python3 -m poetry install --with test
 	python3 -m poetry run pytest
