@@ -1,3 +1,0 @@
--r base.txt
-sphinx<7.2,>=7.1
-sphinx_rtd_theme<1.4,>=1.3
