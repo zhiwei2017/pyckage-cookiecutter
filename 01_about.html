@@ -4,19 +4,18 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pyckage Cookiecutter &mdash; Pyckage Cookiecutter 0.4.0 documentation</title>
+  <title>Pyckage Cookiecutter &mdash; Pyckage Cookiecutter 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=af2ce170"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -36,7 +35,7 @@
             Pyckage Cookiecutter
           </a>
               <div class="version">
-                0.4.0
+                1.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -95,11 +94,10 @@
              
   <section id="pyckage-cookiecutter">
 <h1>Pyckage Cookiecutter<a class="headerlink" href="#pyckage-cookiecutter" title="Permalink to this heading"></a></h1>
-<a class="reference external image-reference" href="https://pyckage-cookiecutter.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/pyckage-cookiecutter/badge/?version=latest" /></a>
 <a class="reference external image-reference" href="https://github.com/zhiwei2017/pyckage-cookiecutter/actions"><img alt="https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" src="https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&amp;%20Build%20Test/badge.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/v/pyckage-cookiecutter.svg" /></a>
 <a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/l/pyckage-cookiecutter.svg" /></a>
-<a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11" src="https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/pyckage-cookiecutter/"><img alt="Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11 | Python 3.12" src="https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg" /></a>
 <a class="reference external image-reference" href="https://badge.fury.io/py/pyckage-cookiecutter"><img alt="https://img.shields.io/pypi/format/pyckage-cookiecutter.svg" src="https://img.shields.io/pypi/format/pyckage-cookiecutter.svg" /></a>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
@@ -142,27 +140,27 @@ remote: Compressing objects: 100% (123/123), done.
 remote: Total 219 (delta 83), reused 181 (delta 69), pack-reused 0
 Receiving objects: 100% (219/219), 41.09 KiB | 1.71 MiB/s, done.
 Resolving deltas: 100% (83/83), done.
-project_name [My Awesome Project]: Fake Reddit API
-project_slug [fake_reddit_api]: feddit
-project_url [https://github.com/example_project]: https://github.com/feddit
-author [John Doe]: John Doe
-email [john-doe@example.com]: john.doe@example.com
-short_description [Behold My Awesome Project!]: A fake reddit API.
-version [0.1.0]: 0.1.0
-Select license:
-1 - MIT
-2 - APACHE
-3 - 2-Clause BSD
-4 - 3-Clause BSD
-5 - GPL
-6 - None
-Choose from 1, 2, 3, 4, 5, 6 [1]: 1
-Select ci_tool:
-1 - GitHub
-2 - GitLab
-3 - Bitbucket
-4 - None
-Choose from 1, 2, 3, 4 [1]: 1
+  [1/8] Select your project name (My Awesome Project):
+  [2/8] Project URL for hosting the source code. (https://repository-hosting.com/example_project): https://github.com/zhiwei2017/feddit
+  [3/8] Author full name. (John Doe): John Doe
+  [4/8] Author email address. (john.doe@email.com): john.doe@example.com
+  [5/8] Short description. (Behold My Awesome Project!): A fake reddit API.
+  [6/8] Semantic version to use for release. (0.1.0): 0.1.0
+  [7/8] Which license do you want to use for your project?
+    1 - None
+    2 - MIT
+    3 - APACHE
+    4 - 2-Clause BSD
+    5 - 3-Clause BSD
+    6 - GPL
+    Choose from [1/2/3/4/5/6] (1): 2
+  [8/8] Which CI/CD pipelines do you plan to use?
+    1 - None
+    2 - GitHub
+    3 - GitLab
+    4 - Bitbucket
+    Choose from [1/2/3/4] (1): 2
+**Please read the comments from README.rst in your project to get to know how to setup the CI/CD pipeline and use commands from Makefile.**
 </pre></div>
 </div>
 <p>Enter the project and take a look around:</p>
@@ -187,11 +185,7 @@ $ ls
 │       ├── conf.py                 - sphinx configuration file
 │       └── index.rst
 ├── feddit
-│   └── version.py                  - version information
-├── requirements                    - package dependencies
-│   ├── base.txt                    - base dependencies
-│   ├── doc.txt                     - documentation dependencies
-│   └── dev.txt                     - tests dependencies
+│   └── __init__.py
 ├── tests                           - tests
 │   ├── resources                   - resources used in tests
 │   ├── conftest.py                 - fixtures in tests
@@ -202,8 +196,8 @@ $ ls
 ├── Makefile                        - predefined terminal commands
 ├── MANIFEST.in                     - commands, one per line, instructing setuptools to add or remove some set of files from the sdis
 ├── README.rst                      - package information
-├── setup.cfg                       - configurations for mypy, bandit, pytest etc. Centralizing all the configurations to one place.
-└── setup.py                        - package installation configuration
+├── setup.cfg                       - configurations for flake8, since it doesn&#39;t support pyproject.toml.
+└── pyproject.toml                  - package configuration file
 </pre></div>
 </div>
 <p>If you want to use CI/CD pipeline for uploading your package to PyPi, please check the section <strong>CI/CD configuration</strong>.</p>
@@ -214,7 +208,7 @@ $ ls
 </pre></div>
 </div>
 <p>or through <strong>poetry</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ poetry add pyckage-cookiecutter
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ poetry self add pyckage-cookiecutter
 </pre></div>
 </div>
 <p>And start generating a new project by call:</p>
@@ -244,17 +238,19 @@ which steps are included and how to configure them in different platforms.</p>
 <th class="head"><p>Steps</p></th>
 <th class="head"><p>Trigger Rules</p></th>
 <th class="head"><p>Requisite CI/CD Variables</p></th>
+<th class="head"><p>CI/CD Variables description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td rowspan="8"><p>test.yml</p></td>
+<tr class="row-even"><td rowspan="9"><p>test.yml</p></td>
 <td><p>mypy check</p></td>
-<td rowspan="8"><ul class="simple">
+<td rowspan="9"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p><strong>Pull Requests</strong> to <em>master/develop</em> branches</p></li>
 </ul>
 </td>
-<td rowspan="8"></td>
+<td rowspan="9"></td>
+<td rowspan="9"></td>
 </tr>
 <tr class="row-odd"><td><p>flake8 check</p></td>
 </tr>
@@ -268,18 +264,32 @@ which steps are included and how to configure them in different platforms.</p>
 </tr>
 <tr class="row-even"><td><p>test with python 3.11 (Ubuntu/Mac OS/Windows)</p></td>
 </tr>
-<tr class="row-odd"><td><p>twine check the built package</p></td>
+<tr class="row-odd"><td><p>test with python 3.12 (Ubuntu/Mac OS/Windows)</p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><p>release.yml</p></td>
-<td rowspan="2"><p>deploy to PyPi</p></td>
-<td rowspan="2"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
-<td><p>TWINE_USERNAME</p></td>
+<tr class="row-even"><td><p>twine check the built package</p></td>
 </tr>
-<tr class="row-odd"><td><p>TWINE_PASSWORD</p></td>
+<tr class="row-odd"><td rowspan="4"><p>release.yml</p></td>
+<td rowspan="4"><p>deploy to PyPi</p></td>
+<td rowspan="4"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
+<td><p>POETRY_PYPI_TOKEN_PYPI</p></td>
+<td><p>Token for uploading package to official PyPi. If you’re
+using a private artifactory, please use the variables
+<cite>PACKAGE_INDEX_REPOSITORY_URL</cite>, <cite>PACKAGE_INDEX_USERNAME</cite>,
+and <cite>PACKAGE_INDEX_PASSWORD</cite> instead.</p></td>
 </tr>
-<tr class="row-even"><td><p>sphinx.yml</p></td>
+<tr class="row-even"><td><p>PACKAGE_INDEX_REPOSITORY_URL</p></td>
+<td><p>URL of Private package index.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PACKAGE_INDEX_USERNAME</p></td>
+<td><p>Username of Private package index.</p></td>
+</tr>
+<tr class="row-even"><td><p>PACKAGE_INDEX_PASSWORD</p></td>
+<td><p>Password of Private package index.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sphinx.yml</p></td>
 <td><p>deploy GitHub pages</p></td>
 <td><p><strong>Pushes</strong> to <em>master</em> branch</p></td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -316,25 +326,26 @@ $ git push origin gh-pages
 <th class="head"><p>Steps</p></th>
 <th class="head"><p>Trigger Rules</p></th>
 <th class="head"><p>Requisite CI/CD Variables</p></th>
+<th class="head"><p>CI/CD Variables description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td rowspan="3"><p>linting</p></td>
 <td><p>mypy check</p></td>
-<td rowspan="8"><ul class="simple">
+<td rowspan="9"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p>Any <strong>Merge Requests</strong></p></li>
 </ul>
 </td>
-<td rowspan="3"></td>
+<td rowspan="9"></td>
+<td rowspan="9"></td>
 </tr>
 <tr class="row-odd"><td><p>flake8 check</p></td>
 </tr>
 <tr class="row-even"><td><p>bandit check</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="4"><p>test</p></td>
+<tr class="row-odd"><td rowspan="5"><p>test</p></td>
 <td><p>test with python 3.8</p></td>
-<td rowspan="4"></td>
 </tr>
 <tr class="row-even"><td><p>test with python 3.9</p></td>
 </tr>
@@ -342,16 +353,28 @@ $ git push origin gh-pages
 </tr>
 <tr class="row-even"><td><p>test with python 3.11</p></td>
 </tr>
-<tr class="row-odd"><td><p>build</p></td>
+<tr class="row-odd"><td><p>test with python 3.12</p></td>
+</tr>
+<tr class="row-even"><td><p>build</p></td>
 <td><p>twine check the built package</p></td>
-<td></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><p>deploy</p></td>
-<td rowspan="2"><p>deploy to PyPi</p></td>
-<td rowspan="2"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
-<td><p>TWINE_USERNAME</p></td>
+<tr class="row-odd"><td rowspan="4"><p>deploy</p></td>
+<td rowspan="4"><p>deploy to PyPi</p></td>
+<td rowspan="4"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
+<td><p>POETRY_PYPI_TOKEN_PYPI</p></td>
+<td><p>Token for uploading package to official PyPi. If you’re
+using a private artifactory, please use the variables
+<cite>PACKAGE_INDEX_REPOSITORY_URL</cite>, <cite>PACKAGE_INDEX_USERNAME</cite>,
+and <cite>PACKAGE_INDEX_PASSWORD</cite> instead.</p></td>
 </tr>
-<tr class="row-odd"><td><p>TWINE_PASSWORD</p></td>
+<tr class="row-even"><td><p>PACKAGE_INDEX_REPOSITORY_URL</p></td>
+<td><p>URL of Private package index.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PACKAGE_INDEX_USERNAME</p></td>
+<td><p>Username of Private package index.</p></td>
+</tr>
+<tr class="row-even"><td><p>PACKAGE_INDEX_PASSWORD</p></td>
+<td><p>Password of Private package index.</p></td>
 </tr>
 </tbody>
 </table>
@@ -383,16 +406,18 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
 <tr class="row-odd"><th class="head"><p>Steps</p></th>
 <th class="head"><p>Trigger Rules</p></th>
 <th class="head"><p>Requisite CI/CD Variables</p></th>
+<th class="head"><p>CI/CD Variables description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>mypy check</p></td>
-<td rowspan="8"><ul class="simple">
+<td rowspan="9"><ul class="simple">
 <li><p><strong>Pushes</strong> to <em>master/develop</em> branches</p></li>
 <li><p>Any <strong>Pull Requests</strong></p></li>
 </ul>
 </td>
-<td rowspan="8"></td>
+<td rowspan="9"></td>
+<td rowspan="9"></td>
 </tr>
 <tr class="row-odd"><td><p>flake8 check</p></td>
 </tr>
@@ -406,13 +431,26 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
 </tr>
 <tr class="row-even"><td><p>test with python 3.11</p></td>
 </tr>
-<tr class="row-odd"><td><p>twine check the built package</p></td>
+<tr class="row-odd"><td><p>test with python 3.12</p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><p>deploy to PyPi</p></td>
-<td rowspan="2"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
-<td><p>TWINE_USERNAME</p></td>
+<tr class="row-even"><td><p>twine check the built package</p></td>
 </tr>
-<tr class="row-odd"><td><p>TWINE_PASSWORD</p></td>
+<tr class="row-odd"><td rowspan="4"><p>deploy to PyPi</p></td>
+<td rowspan="4"><p><strong>Pushes</strong> to tags matching <em>vXX.XX.XX</em></p></td>
+<td><p>POETRY_PYPI_TOKEN_PYPI</p></td>
+<td><p>Token for uploading package to official PyPi. If you’re
+using a private artifactory, please use the variables
+<cite>PACKAGE_INDEX_REPOSITORY_URL</cite>, <cite>PACKAGE_INDEX_USERNAME</cite>,
+and <cite>PACKAGE_INDEX_PASSWORD</cite> instead.</p></td>
+</tr>
+<tr class="row-even"><td><p>PACKAGE_INDEX_REPOSITORY_URL</p></td>
+<td><p>URL of Private package index.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PACKAGE_INDEX_USERNAME</p></td>
+<td><p>Username of Private package index.</p></td>
+</tr>
+<tr class="row-even"><td><p>PACKAGE_INDEX_PASSWORD</p></td>
+<td><p>Password of Private package index.</p></td>
 </tr>
 </tbody>
 </table>
@@ -451,22 +489,25 @@ If you want to keep your variable protected, please add wildcards <strong>v*</st
 <td><p>Remove build artifacts.</p></td>
 </tr>
 <tr class="row-odd"><td><p>bandit</p></td>
-<td><p>Install and run <a class="reference external" href="https://bandit.readthedocs.io/en/latest/">bandit</a> security analysis.</p></td>
+<td><p>Run <a class="reference external" href="https://bandit.readthedocs.io/en/latest/">bandit</a> security analysis.</p></td>
 </tr>
 <tr class="row-even"><td><p>mypy</p></td>
-<td><p>Install and run <a class="reference external" href="https://github.com/python/mypy">mypy</a> type checking.</p></td>
+<td><p>Run <a class="reference external" href="https://github.com/python/mypy">mypy</a> type checking.</p></td>
 </tr>
 <tr class="row-odd"><td><p>flake8</p></td>
-<td><p>Install and run <a class="reference external" href="https://gitlab.com/pycqa/flake8">flake8</a> linting.</p></td>
+<td><p>Run <a class="reference external" href="https://gitlab.com/pycqa/flake8">flake8</a> linting.</p></td>
 </tr>
-<tr class="row-even"><td><p>install_requirements</p></td>
-<td><p>Install all the packages listed in txt files in requirements folder.</p></td>
+<tr class="row-even"><td><p>install</p></td>
+<td><p>Install all the dependencies and the package itself.</p></td>
 </tr>
 <tr class="row-odd"><td><p>test</p></td>
 <td><p>Run tests and generate coverage report.</p></td>
 </tr>
-<tr class="row-even"><td><p>build_whl</p></td>
+<tr class="row-even"><td><p>build</p></td>
 <td><p>Build wheel package.</p></td>
+</tr>
+<tr class="row-odd"><td><p>publish</p></td>
+<td><p>Publish the built wheel package.</p></td>
 </tr>
 </tbody>
 </table>
