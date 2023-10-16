@@ -65,6 +65,9 @@ pipelines:
           - step:
               image: python:3.11-slim
               <<: *test-step
+          - step:
+              image: python:3.12-slim
+              <<: *test-step
       - step:
           <<: *build-step
   branches:
@@ -85,6 +88,9 @@ pipelines:
               <<: *test-step
           - step:
               image: python:3.11-slim
+              <<: *test-step
+          - step:
+              image: python:3.12-slim
               <<: *test-step
       - step:
           <<: *build-step

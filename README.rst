@@ -16,7 +16,7 @@ Pyckage Cookiecutter
 .. python version badge from PyPI
 .. image:: https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg
     :target: https://pypi.python.org/pypi/pyckage-cookiecutter/
-    :alt: Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11
+    :alt: Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11 | Python 3.12
 
 .. pypi format
 .. image:: https://img.shields.io/pypi/format/pyckage-cookiecutter.svg
@@ -183,6 +183,8 @@ Content
 |             +----------------------------------------------+                                                  |                             |                                                           |
 |             | test with python 3.11 (Ubuntu/Mac OS/Windows)|                                                  |                             |                                                           |
 |             +----------------------------------------------+                                                  |                             |                                                           |
+|             | test with python 3.12 (Ubuntu/Mac OS/Windows)|                                                  |                             |                                                           |
+|             +----------------------------------------------+                                                  |                             |                                                           |
 |             | twine check the built package                |                                                  |                             |                                                           |
 +-------------+----------------------------------------------+--------------------------------------------------+-----------------------------+-----------------------------------------------------------+
 |             |                                              |                                                  |                             | Token for uploading package to official PyPi. If you're   |
@@ -239,6 +241,8 @@ Content
 |         | test with python 3.10           |                                           |                              |                                                           |
 |         +---------------------------------+                                           |                              |                                                           |
 |         | test with python 3.11           |                                           |                              |                                                           |
+|         +---------------------------------+                                           |                              |                                                           |
+|         | test with python 3.12           |                                           |                              |                                                           |
 +---------+---------------------------------+                                           |                              |                                                           |
 | build   | twine check the built package   |                                           |                              |                                                           |
 +---------+---------------------------------+-------------------------------------------+------------------------------+-----------------------------------------------------------+
@@ -292,6 +296,8 @@ Content
 | test with python 3.10           |                                           |                              |                                                           |
 +---------------------------------+                                           |                              |                                                           |
 | test with python 3.11           |                                           |                              |                                                           |
++---------------------------------+                                           |                              |                                                           |
+| test with python 3.12           |                                           |                              |                                                           |
 +---------------------------------+                                           |                              |                                                           |
 | twine check the built package   |                                           |                              |                                                           |
 +---------------------------------+-------------------------------------------+------------------------------+-----------------------------------------------------------+
