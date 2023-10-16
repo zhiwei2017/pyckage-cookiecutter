@@ -1,6 +1,5 @@
-from {{cookiecutter.project_slug}}.version import __version__
+import importlib.metadata
 
 
-class TestVersion:
-    def test_version(self):
-        assert isinstance(__version__, str)
+def test_version():
+    assert isinstance(importlib.metadata.version("{{cookiecutter.project_slug}}"), str)

@@ -6,11 +6,29 @@ stages:
   - deploy
 
 variables:
-  PKG_NAME: {{cookiecutter.project_slug}}
+  PKG_NAME: test_pyckage_gitlab
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  key:
+    files:
+      - poetry.lock
+      - .gitlab-ci.yml
+    prefix: ${CI_JOB_NAME}
+  paths:
+    - .venv
+    - .cache/pip
+
+image: python:3.10-slim
+
+before_script:
+  - apt-get update -qy && apt-get install -y build-essential make
+  - pip install poetry
+  - poetry config virtualenvs.in-project true
+  - make install
 
 ############ START SHARED SCRIPTS ############
 .linting: &linting
-  image: python:3.10-buster
   stage: linting
   script:
     - make ${LINTING_PKG}
@@ -51,16 +69,8 @@ linting:bandit:
 ############ END LINTING STAGE #############
 
 ############## START TEST STAGE ############
-test:3.7:
-  image: python:3.7-buster
-  <<: *test
-  only:
-    - master
-    - develop
-    - merge_requests
-
 test:3.8:
-  image: python:3.8-buster
+  image: python:3.8-slim
   <<: *test
   only:
     - master
@@ -68,7 +78,7 @@ test:3.8:
     - merge_requests
 
 test:3.9:
-  image: python:3.9-buster
+  image: python:3.9-slim
   <<: *test
   only:
     - master
@@ -76,7 +86,7 @@ test:3.9:
     - merge_requests
 
 test:3.10:
-  image: python:3.10-buster
+  image: python:3.10-slim
   <<: *test
   only:
     - master
@@ -84,7 +94,7 @@ test:3.10:
     - merge_requests
 
 test:3.11:
-  image: python:3.11-buster
+  image: python:3.11-slim
   <<: *test
   only:
     - master
@@ -94,16 +104,13 @@ test:3.11:
 
 ############# START BUILD STAGE ############
 build:
-  image: python:3.10-buster
   stage: build
-  before_script:
-    - apt update -y && apt install -y make curl
-    - pip install twine
   script:
     - echo "Building wheel distribution..."
-    - make build_whl
+    - make build
     - echo "Uploading the package to nexus via twine..."
-    - twine check dist/*.whl
+    - pip install twine
+    - poetry run twine check dist/*.whl
   only:
     - master
     - develop
@@ -112,24 +119,9 @@ build:
 
 ############# START DEPLOY STAGE ############
 deploy:
-  image: python:3.10-buster
   stage: deploy
-  before_script:
-    - apt update -y && apt install -y make curl
-    - pip install twine
   script:
-    - echo "Building wheel distribution..."
-    - make build_whl
-    - echo "Uploading the package to nexus via twine..."
-    - >
-      if [ -z "${TWINE_USERNAME}" ]; then
-        echo "\033[1mTWINE_USERNAME\033[0m is undefined."
-        exit 1
-      elif [ -z "${TWINE_PASSWORD}" ]; then
-        echo "\033[1mTWINE_PASSWORD\033[0m is undefined."
-        exit 1
-      fi
-    - twine upload --cert /etc/ssl/certs/ca-certificates.crt --skip-existing dist/*.whl
+    - make publish
   only:
     - /^v[0-9]+\.[0-9]+\.[0-9]+$/
 ############# END DEPLOY STAGE ##############

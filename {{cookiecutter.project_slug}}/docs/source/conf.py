@@ -14,6 +14,7 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import datetime
+import importlib.metadata
 
 # -- Project information -----------------------------------------------------
 
@@ -23,7 +24,7 @@ copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
 
 # The short X.Y version
-version = "{{ cookiecutter.version }}"
+version = importlib.metadata.version("{{cookiecutter.project_slug}}")
 # The full version, including alpha/beta/rc tags
 release = version
 
