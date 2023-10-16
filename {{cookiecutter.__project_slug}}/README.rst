@@ -207,13 +207,13 @@ To install {{ cookiecutter.project_name }}, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install {{ cookiecutter.project_slug }}
+    $ pip install {{ cookiecutter.__project_slug }}
 
 or
 
 .. code-block:: console
 
-    $ poetry self add {{ cookiecutter.project_slug }}
+    $ poetry self add {{ cookiecutter.__project_slug }}
 
 This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent stable release.
 
@@ -246,7 +246,7 @@ How to Use
 
 To use {{ cookiecutter.project_name }} in a project::
 
-    import {{ cookiecutter.project_slug }}
+    import {{ cookiecutter.__project_slug }}
 
 Maintainers
 -----------

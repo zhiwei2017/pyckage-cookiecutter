@@ -48,20 +48,20 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for local development.
+Ready to contribute? Here's how to set up `{{ cookiecutter.__project_slug }}` for local development.
 
-1. Fork the `{{ cookiecutter.project_slug }}` repo{% if cookiecutter.ci_tool != 'None' %} on {{ cookiecutter.ci_tool }}{% endif %}.
+1. Fork the `{{ cookiecutter.__project_slug }}` repo{% if cookiecutter.ci_tool != 'None' %} on {{ cookiecutter.ci_tool }}{% endif %}.
 2. Clone your fork locally::
 
     $ git clone git@your_repo_url.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenv installed, this is how you set up your fork for local development::
 
-    $ python -m virtualenv {{ cookiecutter.project_slug }}-venv
-    $ source {{ cookiecutter.project_slug }}-venv/bin/activate
-    $ cd {{ cookiecutter.project_slug }}/
+    $ python -m virtualenv {{ cookiecutter.__project_slug }}-venv
+    $ source {{ cookiecutter.__project_slug }}-venv/bin/activate
+    $ cd {{ cookiecutter.__project_slug }}/
 
-   Now you can install `{{ cookiecutter.project_slug }}` in develop mode in your virtual environment::
+   Now you can install `{{ cookiecutter.__project_slug }}` in develop mode in your virtual environment::
 
     $ make install
 

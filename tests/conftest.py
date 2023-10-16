@@ -33,7 +33,7 @@ def context():
         "author": "Test Author",
         "email": "test@example.com",
         "project_name": "My Test Project",
-        "project_slug": "my_test_project",
+        "__project_slug": "my_test_project",
         "project_url": "https:/dummy.com/my_test_project",
         "short_description": "A short description of the project.",
         "version": "0.1.0"

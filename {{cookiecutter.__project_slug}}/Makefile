@@ -1,4 +1,4 @@
-SOURCE_DIR = ./{{cookiecutter.project_slug}}
+SOURCE_DIR = ./{{cookiecutter.__project_slug}}
 
 .PHONY: clean help
 
