@@ -99,6 +99,14 @@ test:3.11:
     - master
     - develop
     - merge_requests
+
+test:3.12:
+  image: python:3.12-slim
+  <<: *test
+  only:
+    - master
+    - develop
+    - merge_requests
 ############## END TEST STAGE ##############
 
 ############# START BUILD STAGE ############
