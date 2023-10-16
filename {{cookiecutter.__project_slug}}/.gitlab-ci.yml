@@ -6,7 +6,6 @@ stages:
   - deploy
 
 variables:
-  PKG_NAME: test_pyckage_gitlab
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
 
 cache:

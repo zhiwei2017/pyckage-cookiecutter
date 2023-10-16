@@ -1,5 +1,5 @@
 [tool.poetry]
-name = '{{cookiecutter.project_slug}}'
+name = '{{cookiecutter.__project_slug}}'
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.short_description}}"
 authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
@@ -9,7 +9,7 @@ repository = "{{cookiecutter.project_url}}"
 documentation = ""
 keywords = []
 packages = [
-  {include = "{{cookiecutter.project_slug}}"}
+  {include = "{{cookiecutter.__project_slug}}"}
 ]
 
 include = []
@@ -47,4 +47,4 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = ["tests"]
-addopts = "--verbose --doctest-modules --cov-report term-missing --cov=./{{cookiecutter.project_slug}}"
+addopts = "--verbose --doctest-modules --cov-report term-missing --cov=./{{cookiecutter.__project_slug}}"

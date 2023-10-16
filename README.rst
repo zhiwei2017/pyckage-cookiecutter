@@ -1,11 +1,6 @@
 Pyckage Cookiecutter
 ====================
 
-.. readthedocs badge
-.. image:: https://readthedocs.org/projects/pyckage-cookiecutter/badge/?version=latest
-    :target: https://pyckage-cookiecutter.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
-
 .. actions building badge
 .. image:: https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&%20Build%20Test/badge.svg
     :target: https://github.com/zhiwei2017/pyckage-cookiecutter/actions
@@ -76,27 +71,27 @@ Answer the prompts with your own desired `Prompts <https://zhiwei2017.github.io/
     remote: Total 219 (delta 83), reused 181 (delta 69), pack-reused 0
     Receiving objects: 100% (219/219), 41.09 KiB | 1.71 MiB/s, done.
     Resolving deltas: 100% (83/83), done.
-    project_name [My Awesome Project]: Fake Reddit API
-    project_slug [fake_reddit_api]: feddit
-    project_url [https://github.com/example_project]: https://github.com/feddit
-    author [John Doe]: John Doe
-    email [john-doe@example.com]: john.doe@example.com
-    short_description [Behold My Awesome Project!]: A fake reddit API.
-    version [0.1.0]: 0.1.0
-    Select license:
-    1 - MIT
-    2 - APACHE
-    3 - 2-Clause BSD
-    4 - 3-Clause BSD
-    5 - GPL
-    6 - None
-    Choose from 1, 2, 3, 4, 5, 6 [1]: 1
-    Select ci_tool:
-    1 - GitHub
-    2 - GitLab
-    3 - Bitbucket
-    4 - None
-    Choose from 1, 2, 3, 4 [1]: 1
+      [1/8] Select your project name (My Awesome Project):
+      [2/8] Project URL for hosting the source code. (https://repository-hosting.com/example_project): https://github.com/zhiwei2017/feddit
+      [3/8] Author full name. (John Doe): John Doe
+      [4/8] Author email address. (john.doe@email.com): john.doe@example.com
+      [5/8] Short description. (Behold My Awesome Project!): A fake reddit API.
+      [6/8] Semantic version to use for release. (0.1.0): 0.1.0
+      [7/8] Which license do you want to use for your project?
+        1 - None
+        2 - MIT
+        3 - APACHE
+        4 - 2-Clause BSD
+        5 - 3-Clause BSD
+        6 - GPL
+        Choose from [1/2/3/4/5/6] (1): 2
+      [8/8] Which CI/CD pipelines do you plan to use?
+        1 - None
+        2 - GitHub
+        3 - GitLab
+        4 - Bitbucket
+        Choose from [1/2/3/4] (1): 2
+    **Please read the comments from README.rst in your project to get to know how to setup the CI/CD pipeline and use commands from Makefile.**
 
 Enter the project and take a look around::
 

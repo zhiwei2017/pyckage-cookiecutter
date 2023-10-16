@@ -13,7 +13,7 @@ packages = [
 ]
 
 include = [
-  '{{cookiecutter.project_slug}}/**/*',
+  '{{cookiecutter.__project_slug}}/**/*',
   'cookiecutter.json',
   'hooks/*',
 ]
