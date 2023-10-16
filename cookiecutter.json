@@ -1,26 +1,38 @@
 {
     "project_name": "My Awesome Project",
-    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
-    "project_url": "https://github.com/example_project",
+    "__project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "project_url": "https://repository-hosting.com/example_project",
     "author": "John Doe",
-    "email": "{{ cookiecutter.author.lower()|replace(' ', '.') }}@email.com",
+    "email": "{{ cookiecutter.author.lower() | replace(' ', '.') }}@email.com",
     "short_description": "Behold My Awesome Project!",
     "version": "0.1.0",
     "license": [
+        "None",
         "MIT",
         "APACHE",
         "2-Clause BSD",
         "3-Clause BSD",
-        "GPL",
-        "None"
+        "GPL"
     ],
     "ci_tool": [
+        "None",
         "GitHub",
         "GitLab",
-        "Bitbucket",
-        "None"
+        "Bitbucket"
     ],
     "_copy_without_render": [
-        ".github/*"
-    ]
+        ".github/*",
+        ".gitlab-ci.yml",
+        "bitbucket-pipelines.yml"
+    ],
+    "__prompts__": {
+        "project_name": "Select your project name",
+        "project_url": "Project URL for hosting the source code.",
+        "author": "Author full name.",
+        "email": "Author email address.",
+        "short_description": "Short description.",
+        "version": "Semantic version to use for release.",
+        "license": "Which license do you want to use for your project?",
+        "ci_tool": "Which CI/CD pipelines do you plan to use?"
+    }
 }

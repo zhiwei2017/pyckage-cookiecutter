@@ -1,11 +1,6 @@
 Pyckage Cookiecutter
 ====================
 
-.. readthedocs badge
-.. image:: https://readthedocs.org/projects/pyckage-cookiecutter/badge/?version=latest
-    :target: https://pyckage-cookiecutter.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
-
 .. actions building badge
 .. image:: https://github.com/zhiwei2017/pyckage-cookiecutter/workflows/Unit%20Test%20&%20Build%20Test/badge.svg
     :target: https://github.com/zhiwei2017/pyckage-cookiecutter/actions
@@ -21,7 +16,7 @@ Pyckage Cookiecutter
 .. python version badge from PyPI
 .. image:: https://img.shields.io/pypi/pyversions/pyckage-cookiecutter.svg
     :target: https://pypi.python.org/pypi/pyckage-cookiecutter/
-    :alt: Python 3.7 | Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11
+    :alt: Python 3.8 | Python 3.9 | Python 3.10 | Python 3.11 | Python 3.12
 
 .. pypi format
 .. image:: https://img.shields.io/pypi/format/pyckage-cookiecutter.svg
@@ -37,20 +32,13 @@ While using this project, you will be asked to provide some inputs such as the a
 the name of the project, etc. As result you will obtain the
 complete file and folder structure to quickly start to code your package.
 
-Prerequisites
--------------
-
-Please install the Python package cookiecutter_ before using it::
-
-    $ pip install cookiecutter
-
 How to Use
 ----------
 
 Tutorial
 ++++++++
 
-Let's pretend you want to create a project called "redditclone".
+Let's pretend you want to create a project called "feddit".
 By using this template based on cookiecutter_,
 you will be able to quickly setup a buildable PyPi package.
 
@@ -58,15 +46,23 @@ First, get cookiecutter_. Trust me, it's awesome::
 
      $ pip install cookiecutter
 
+or with **poetry**::
+
+     $ poetry self add cookiecutter
+
 Now run it against this repo::
 
      $ cookiecutter https://github.com/zhiwei2017/pyckage-cookiecutter
+     
+or::
+
+    $ poetry run cookiecutter https://github.com/zhiwei2017/pyckage-cookiecutter
 
 You'll be prompted for some values. Provide them, then a project will be created for you.
 
-**Warning**: After this point, change 'My Awesome Project', 'John Doe', etc to your own information.
+**Warning**: After this point, change '*My Awesome Project*', '*John Doe*', etc to your own information.
 
-Answer the prompts with your own desired `Prompts <https://pyckage-cookiecutter.readthedocs.io/en/latest/02_prompts.html>`_. For example::
+Answer the prompts with your own desired `Prompts <https://zhiwei2017.github.io/pyckage-cookiecutter/02_prompts.html>`_. For example::
 
     Cloning into 'pyckage-cookiecutter'...
     remote: Enumerating objects: 219, done.
@@ -75,36 +71,36 @@ Answer the prompts with your own desired `Prompts <https://pyckage-cookiecutter.
     remote: Total 219 (delta 83), reused 181 (delta 69), pack-reused 0
     Receiving objects: 100% (219/219), 41.09 KiB | 1.71 MiB/s, done.
     Resolving deltas: 100% (83/83), done.
-    project_name [My Awesome Project]: Reddit Clone
-    project_slug [reddit_clone]: reddit
-    project_url [https://github.com/example_project]: https://github.com/reddit-clone
-    author [John Doe]: John Doe
-    email [john-doe@example.com]: john.doe@example.com
-    short_description [Behold My Awesome Project!]: A reddit clone.
-    version [0.1.0]: 0.1.0
-    Select license:
-    1 - MIT
-    2 - APACHE
-    3 - 2-Clause BSD
-    4 - 3-Clause BSD
-    5 - GPL
-    6 - None
-    Choose from 1, 2, 3, 4, 5, 6 [1]: 1
-    Select ci_tool:
-    1 - GitHub
-    2 - GitLab
-    3 - Bitbucket
-    4 - None
-    Choose from 1, 2, 3, 4 [1]: 1
+      [1/8] Select your project name (My Awesome Project):
+      [2/8] Project URL for hosting the source code. (https://repository-hosting.com/example_project): https://github.com/zhiwei2017/feddit
+      [3/8] Author full name. (John Doe): John Doe
+      [4/8] Author email address. (john.doe@email.com): john.doe@example.com
+      [5/8] Short description. (Behold My Awesome Project!): A fake reddit API.
+      [6/8] Semantic version to use for release. (0.1.0): 0.1.0
+      [7/8] Which license do you want to use for your project?
+        1 - None
+        2 - MIT
+        3 - APACHE
+        4 - 2-Clause BSD
+        5 - 3-Clause BSD
+        6 - GPL
+        Choose from [1/2/3/4/5/6] (1): 2
+      [8/8] Which CI/CD pipelines do you plan to use?
+        1 - None
+        2 - GitHub
+        3 - GitLab
+        4 - Bitbucket
+        Choose from [1/2/3/4] (1): 2
+    **Please read the comments from README.rst in your project to get to know how to setup the CI/CD pipeline and use commands from Makefile.**
 
 Enter the project and take a look around::
 
-    $ cd reddit/
+    $ cd feddit/
     $ ls
 
 Your repo should have the following structure::
 
-    reddit
+    feddit
     ├── .github                         - github actions configurations
     │   └── workflows
     │       ├── test.yml                - pipelines for linting checks and testing
@@ -114,19 +110,13 @@ Your repo should have the following structure::
     │   ├── Makefile                    - Makefile defines terminal commands for sphinx documentation
     │   └── source                      - documentation source folder
     │       ├── 01_about.rst
-    │       ├── 02_installation.rst
-    │       ├── 03_usage.rst
-    │       ├── 04_source.rst
-    │       ├── 05_authors.rst
-    │       ├── 06_contributing.rst
+    │       ├── 02_source.rst
+    │       ├── 03_authors.rst
+    │       ├── 04_contributing.rst
     │       ├── conf.py                 - sphinx configuration file
     │       └── index.rst
-    ├── reddit
-    │   └── version.py                  - version information
-    ├── requirements                    - package dependencies
-    │   ├── base.txt                    - base dependencies
-    │   ├── doc.txt                     - documentation dependencies
-    │   └── dev.txt                     - tests dependencies
+    ├── feddit
+    │   └── __init__.py
     ├── tests                           - tests
     │   ├── resources                   - resources used in tests
     │   ├── conftest.py                 - fixtures in tests
@@ -137,21 +127,28 @@ Your repo should have the following structure::
     ├── Makefile                        - predefined terminal commands
     ├── MANIFEST.in                     - commands, one per line, instructing setuptools to add or remove some set of files from the sdis
     ├── README.rst                      - package information
-    ├── setup.cfg                       - configurations for mypy, bandit, pytest etc. Centralizing all the configurations to one place.
-    ├── setup.py                        - package installation configuration
-    └── tox.ini                         - run tests with multiple python versions
+    ├── setup.cfg                       - configurations for flake8, since it doesn't support pyproject.toml.
+    └── pyproject.toml                  - package configuration file
 
 If you want to use CI/CD pipeline for uploading your package to PyPi, please check the section **CI/CD configuration**.
 
 **Note**:
 
-+ This repo is built as a wheel package and uploaded to `PyPi <https://pypi.python.org/pypi/pyckage-cookiecutter/>`_. You can install it through::
++ This repo is built as a wheel package and uploaded to `PyPi <https://pypi.python.org/pypi/pyckage-cookiecutter/>`_. You can install it through **pip**::
 
     $ pip install pyckage-cookiecutter
+
+  or through **poetry**::
+
+    $ poetry self add pyckage-cookiecutter
 
   And start generating a new project by call::
 
     $ pyckage_cookiecutter
+  
+  or::
+
+    $ poetry run pyckage_cookiecutter
 
   The rest is the same as the `Tutorial <#tutorial>`_ introduced.
 
@@ -169,33 +166,40 @@ You can find all the configuration files of GitHub Actions in ``.github/workflow
 Content
 :::::::
 
-+-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
-| Config File |          Steps                               |                Trigger Rules                     | Requisite CI/CD Variables                                              |
-+=============+==============================================+==================================================+========================================================================+
-|             | mypy check                                   |                                                  |                                                                        |
-|             +----------------------------------------------+                                                  |                                                                        |
-|             | flake8 check                                 | + **Pushes** to *master/develop* branches        |                                                                        |
-|             +----------------------------------------------+                                                  |                                                                        |
-| test.yml    | bandit check                                 | + **Pull Requests** to *master/develop* branches |                                                                        |
-|             +----------------------------------------------+                                                  |                                                                        |
-|             | test with python 3.7 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
-|             +----------------------------------------------+                                                  |                                                                        |
-|             | test with python 3.8 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
-|             +----------------------------------------------+                                                  |                                                                        |
-|             | test with python 3.9 (Ubuntu/Mac OS/Windows) |                                                  |                                                                        |
-|             +----------------------------------------------+                                                  |                                                                        |
-|             | test with python 3.10 (Ubuntu/Mac OS/Windows)|                                                  |                                                                        |
-|             +----------------------------------------------+                                                  |                                                                        |
-|             | test with python 3.11 (Ubuntu/Mac OS/Windows)|                                                  |                                                                        |
-|             +----------------------------------------------+                                                  |                                                                        |
-|             | twine check the built package                |                                                  |                                                                        |
-+-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
-|             |                                              |                                                  | TWINE_USERNAME                                                         |
-| release.yml | deploy to PyPi                               | **Pushes** to tags matching *vXX.XX.XX*          +------------------------------------------------------------------------+
-|             |                                              |                                                  | TWINE_PASSWORD                                                         |
-+-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
-| sphinx.yml  | deploy GitHub pages                          | **Pushes** to *master* branch                    |                                                                        |
-+-------------+----------------------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
++-------------+----------------------------------------------+--------------------------------------------------+-----------------------------+-----------------------------------------------------------+
+| Config File |          Steps                               |                Trigger Rules                     | Requisite CI/CD Variables   | CI/CD Variables description                               |
++=============+==============================================+==================================================+=============================+===========================================================+
+|             | mypy check                                   |                                                  |                             |                                                           |
+|             +----------------------------------------------+                                                  |                             |                                                           |
+|             | flake8 check                                 | + **Pushes** to *master/develop* branches        |                             |                                                           |
+|             +----------------------------------------------+                                                  |                             |                                                           |
+| test.yml    | bandit check                                 | + **Pull Requests** to *master/develop* branches |                             |                                                           |
+|             +----------------------------------------------+                                                  |                             |                                                           |
+|             | test with python 3.8 (Ubuntu/Mac OS/Windows) |                                                  |                             |                                                           |
+|             +----------------------------------------------+                                                  |                             |                                                           |
+|             | test with python 3.9 (Ubuntu/Mac OS/Windows) |                                                  |                             |                                                           |
+|             +----------------------------------------------+                                                  |                             |                                                           |
+|             | test with python 3.10 (Ubuntu/Mac OS/Windows)|                                                  |                             |                                                           |
+|             +----------------------------------------------+                                                  |                             |                                                           |
+|             | test with python 3.11 (Ubuntu/Mac OS/Windows)|                                                  |                             |                                                           |
+|             +----------------------------------------------+                                                  |                             |                                                           |
+|             | test with python 3.12 (Ubuntu/Mac OS/Windows)|                                                  |                             |                                                           |
+|             +----------------------------------------------+                                                  |                             |                                                           |
+|             | twine check the built package                |                                                  |                             |                                                           |
++-------------+----------------------------------------------+--------------------------------------------------+-----------------------------+-----------------------------------------------------------+
+|             |                                              |                                                  |                             | Token for uploading package to official PyPi. If you're   |
+|             |                                              |                                                  | POETRY_PYPI_TOKEN_PYPI      | using a private artifactory, please use the variables     |
+|             |                                              |                                                  |                             | `PACKAGE_INDEX_REPOSITORY_URL`, `PACKAGE_INDEX_USERNAME`, |
+|             |                                              |                                                  |                             | and `PACKAGE_INDEX_PASSWORD` instead.                     |
+|             |                                              |                                                  +-----------------------------+-----------------------------------------------------------+
+|             |                                              |                                                  | PACKAGE_INDEX_REPOSITORY_URL| URL of Private package index.                             |
+| release.yml | deploy to PyPi                               | **Pushes** to tags matching *vXX.XX.XX*          +-----------------------------+-----------------------------------------------------------+
+|             |                                              |                                                  | PACKAGE_INDEX_USERNAME      | Username of Private package index.                        |
+|             |                                              |                                                  +-----------------------------+-----------------------------------------------------------+
+|             |                                              |                                                  | PACKAGE_INDEX_PASSWORD      | Password of Private package index.                        |
++-------------+----------------------------------------------+--------------------------------------------------+-----------------------------+-----------------------------------------------------------+
+| sphinx.yml  | deploy GitHub pages                          | **Pushes** to *master* branch                    |                             |                                                           |
++-------------+----------------------------------------------+--------------------------------------------------+-----------------------------+-----------------------------------------------------------+
 
 **Note**:
 
@@ -221,31 +225,38 @@ The file ``.gitlab-ci.yml`` contains all the configurations for GitLab CI.
 Content
 :::::::
 
-+-------------+---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
-| Stages      |          Steps                  |                Trigger Rules                     | Requisite CI/CD Variables                                              |
-+=============+=================================+==================================================+========================================================================+
-|             | mypy check                      |                                                  |                                                                        |
-|             +---------------------------------+                                                  |                                                                        |
-| linting     | flake8 check                    | + **Pushes** to *master/develop* branches        |                                                                        |
-|             +---------------------------------+                                                  |                                                                        |
-|             | bandit check                    | + Any **Merge Requests**                         |                                                                        |
-+-------------+---------------------------------+                                                  +------------------------------------------------------------------------+
-|             | test with python 3.7            |                                                  |                                                                        |
-|             +---------------------------------+                                                  |                                                                        |
-| test        | test with python 3.8            |                                                  |                                                                        |
-|             +---------------------------------+                                                  |                                                                        |
-|             | test with python 3.9            |                                                  |                                                                        |
-|             +---------------------------------+                                                  |                                                                        |
-|             | test with python 3.10           |                                                  |                                                                        |
-|             +---------------------------------+                                                  |                                                                        |
-|             | test with python 3.11           |                                                  |                                                                        |
-+-------------+---------------------------------+                                                  +------------------------------------------------------------------------+
-| build       | twine check the built package   |                                                  |                                                                        |
-+-------------+---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
-|             |                                 |                                                  | TWINE_USERNAME                                                         |
-| deploy      | deploy to PyPi                  | **Pushes** to tags matching *vXX.XX.XX*          +------------------------------------------------------------------------+
-|             |                                 |                                                  | TWINE_PASSWORD                                                         |
-+-------------+---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
++---------+---------------------------------+-------------------------------------------+------------------------------+-----------------------------------------------------------+
+| Stages  |          Steps                  |                Trigger Rules              | Requisite CI/CD Variables    | CI/CD Variables description                               |
++=========+=================================+===========================================+==============================+===========================================================+
+|         | mypy check                      |                                           |                              |                                                           |
+|         +---------------------------------+                                           |                              |                                                           |
+| linting | flake8 check                    | + **Pushes** to *master/develop* branches |                              |                                                           |
+|         +---------------------------------+                                           |                              |                                                           |
+|         | bandit check                    | + Any **Merge Requests**                  |                              |                                                           |
++---------+---------------------------------+                                           |                              |                                                           |
+|         | test with python 3.8            |                                           |                              |                                                           |
+|         +---------------------------------+                                           |                              |                                                           |
+|  test   | test with python 3.9            |                                           |                              |                                                           |
+|         +---------------------------------+                                           |                              |                                                           |
+|         | test with python 3.10           |                                           |                              |                                                           |
+|         +---------------------------------+                                           |                              |                                                           |
+|         | test with python 3.11           |                                           |                              |                                                           |
+|         +---------------------------------+                                           |                              |                                                           |
+|         | test with python 3.12           |                                           |                              |                                                           |
++---------+---------------------------------+                                           |                              |                                                           |
+| build   | twine check the built package   |                                           |                              |                                                           |
++---------+---------------------------------+-------------------------------------------+------------------------------+-----------------------------------------------------------+
+|         |                                 |                                           |                              | Token for uploading package to official PyPi. If you're   |
+|         |                                 |                                           | POETRY_PYPI_TOKEN_PYPI       | using a private artifactory, please use the variables     |
+|         |                                 |                                           |                              | `PACKAGE_INDEX_REPOSITORY_URL`, `PACKAGE_INDEX_USERNAME`, |
+|         |                                 |                                           |                              | and `PACKAGE_INDEX_PASSWORD` instead.                     |
+|         |                                 |                                           +------------------------------+-----------------------------------------------------------+
+| deploy  | deploy to PyPi                  | **Pushes** to tags matching *vXX.XX.XX*   | PACKAGE_INDEX_REPOSITORY_URL | URL of Private package index.                             |
+|         |                                 |                                           +------------------------------+-----------------------------------------------------------+
+|         |                                 |                                           | PACKAGE_INDEX_USERNAME       | Username of Private package index.                        |
+|         |                                 |                                           +------------------------------+-----------------------------------------------------------+
+|         |                                 |                                           | PACKAGE_INDEX_PASSWORD       | Password of Private package index.                        |
++---------+---------------------------------+-------------------------------------------+------------------------------+-----------------------------------------------------------+
 
 Setup Steps
 :::::::::::
@@ -269,31 +280,38 @@ The file ``bitbucket-pipelines.yml`` contains all the configurations of Bitbucke
 Content
 :::::::
 
-+---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
-|          Steps                  |                Trigger Rules                     | Requisite CI/CD Variables                                              |
-+=================================+==================================================+========================================================================+
-| mypy check                      |                                                  |                                                                        |
-+---------------------------------+                                                  |                                                                        |
-| flake8 check                    | + **Pushes** to *master/develop* branches        |                                                                        |
-+---------------------------------+                                                  |                                                                        |
-| bandit check                    | + Any **Pull Requests**                          |                                                                        |
-+---------------------------------+                                                  |                                                                        |
-| test with python 3.7            |                                                  |                                                                        |
-+---------------------------------+                                                  |                                                                        |
-| test with python 3.8            |                                                  |                                                                        |
-+---------------------------------+                                                  |                                                                        |
-| test with python 3.9            |                                                  |                                                                        |
-+---------------------------------+                                                  |                                                                        |
-| test with python 3.10           |                                                  |                                                                        |
-+---------------------------------+                                                  |                                                                        |
-| test with python 3.11           |                                                  |                                                                        |
-+---------------------------------+                                                  |                                                                        |
-| twine check the built package   |                                                  |                                                                        |
-+---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
-|                                 |                                                  | TWINE_USERNAME                                                         |
-| deploy to PyPi                  | **Pushes** to tags matching *vXX.XX.XX*          +------------------------------------------------------------------------+
-|                                 |                                                  | TWINE_PASSWORD                                                         |
-+---------------------------------+--------------------------------------------------+------------------------------------------------------------------------+
++---------------------------------+-------------------------------------------+------------------------------+-----------------------------------------------------------+
+|          Steps                  |                Trigger Rules              | Requisite CI/CD Variables    | CI/CD Variables description                               |
++=================================+===========================================+==============================+===========================================================+
+| mypy check                      |                                           |                              |                                                           |
++---------------------------------+                                           |                              |                                                           |
+| flake8 check                    | + **Pushes** to *master/develop* branches |                              |                                                           |
++---------------------------------+                                           |                              |                                                           |
+| bandit check                    | + Any **Pull Requests**                   |                              |                                                           |
++---------------------------------+                                           |                              |                                                           |
+| test with python 3.8            |                                           |                              |                                                           |
++---------------------------------+                                           |                              |                                                           |
+| test with python 3.9            |                                           |                              |                                                           |
++---------------------------------+                                           |                              |                                                           |
+| test with python 3.10           |                                           |                              |                                                           |
++---------------------------------+                                           |                              |                                                           |
+| test with python 3.11           |                                           |                              |                                                           |
++---------------------------------+                                           |                              |                                                           |
+| test with python 3.12           |                                           |                              |                                                           |
++---------------------------------+                                           |                              |                                                           |
+| twine check the built package   |                                           |                              |                                                           |
++---------------------------------+-------------------------------------------+------------------------------+-----------------------------------------------------------+
+|                                 |                                           |                              | Token for uploading package to official PyPi. If you're   |
+|                                 |                                           | POETRY_PYPI_TOKEN_PYPI       | using a private artifactory, please use the variables     |
+|                                 |                                           |                              | `PACKAGE_INDEX_REPOSITORY_URL`, `PACKAGE_INDEX_USERNAME`, |
+|                                 |                                           |                              | and `PACKAGE_INDEX_PASSWORD` instead.                     |
+| deploy to PyPi                  | **Pushes** to tags matching *vXX.XX.XX*   +------------------------------+-----------------------------------------------------------+
+|                                 |                                           | PACKAGE_INDEX_REPOSITORY_URL | URL of Private package index.                             |
+|                                 |                                           +------------------------------+-----------------------------------------------------------+
+|                                 |                                           | PACKAGE_INDEX_USERNAME       | Username of Private package index.                        |
+|                                 |                                           +------------------------------+-----------------------------------------------------------+
+|                                 |                                           | PACKAGE_INDEX_PASSWORD       | Password of Private package index.                        |
++---------------------------------+-------------------------------------------+------------------------------+-----------------------------------------------------------+
 
 Setup Steps
 :::::::::::
@@ -320,17 +338,19 @@ Makefile
    * - clean-build
      - Remove build artifacts.
    * - bandit
-     - Install and run `bandit`_ security analysis.
+     - Run `bandit`_ security analysis.
    * - mypy
-     - Install and run `mypy`_ type checking.
+     - Run `mypy`_ type checking.
    * - flake8
-     - Install and run `flake8`_ linting.
-   * - install_requirements
-     - Install all the packages listed in txt files in requirements folder.
+     - Run `flake8`_ linting.
+   * - install
+     - Install all the dependencies and the package itself.
    * - test
      - Run tests and generate coverage report.
-   * - build_whl
+   * - build
      - Build wheel package.
+   * - publish
+     - Publish the built wheel package.
 
 Acknowledgements
 ----------------

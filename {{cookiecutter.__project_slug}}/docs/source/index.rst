@@ -8,11 +8,9 @@ Index
    :maxdepth: 1
 
    01_about
-   02_installation
-   03_usage
-   04_source
-   05_authors
-   06_contributing
+   02_source
+   03_authors
+   04_contributing
 
    
 Indices and tables

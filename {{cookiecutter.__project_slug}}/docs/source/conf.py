@@ -14,6 +14,7 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import datetime
+import importlib.metadata
 
 # -- Project information -----------------------------------------------------
 
@@ -23,7 +24,7 @@ copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
 
 # The short X.Y version
-version = "{{ cookiecutter.version }}"
+version = importlib.metadata.version("{{cookiecutter.__project_slug}}")
 # The full version, including alpha/beta/rc tags
 release = version
 
@@ -116,7 +117,7 @@ html_static_path = []
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = '{{cookiecutter.project_slug}}_docs'
+htmlhelp_basename = '{{cookiecutter.__project_slug}}_docs'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -153,7 +154,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, '{{cookiecutter.project_slug}}', project + ' Documentation', [author], 1)
+    (master_doc, '{{cookiecutter.__project_slug}}', project + ' Documentation', [author], 1)
 ]
 
 

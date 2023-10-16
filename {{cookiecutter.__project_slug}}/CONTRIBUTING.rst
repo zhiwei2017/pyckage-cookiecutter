@@ -48,26 +48,22 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for local development.
+Ready to contribute? Here's how to set up `{{ cookiecutter.__project_slug }}` for local development.
 
-1. Fork the `{{ cookiecutter.project_slug }}` repo{% if cookiecutter.ci_tool != 'None' %} on {{ cookiecutter.ci_tool }}{% endif %}.
+1. Fork the `{{ cookiecutter.__project_slug }}` repo{% if cookiecutter.ci_tool != 'None' %} on {{ cookiecutter.ci_tool }}{% endif %}.
 2. Clone your fork locally::
 
     $ git clone git@your_repo_url.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenv installed, this is how you set up your fork for local development::
 
-    $ python -m virtualenv {{ cookiecutter.project_slug }}-venv
-    $ source {{ cookiecutter.project_slug }}-venv/bin/activate
-    $ cd {{ cookiecutter.project_slug }}/
+    $ python -m virtualenv {{ cookiecutter.__project_slug }}-venv
+    $ source {{ cookiecutter.__project_slug }}-venv/bin/activate
+    $ cd {{ cookiecutter.__project_slug }}/
 
-   Now you can install `{{ cookiecutter.project_slug }}` in develop mode in your virtual environment::
+   Now you can install `{{ cookiecutter.__project_slug }}` in develop mode in your virtual environment::
 
-    $ python setup.py develop
-
-   or::
-
-    $ pip install -e .
+    $ make install
 
 4. Create a branch for local development::
 
@@ -76,15 +72,12 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
    Now you can make your changes locally.
 
 5. When you're done making changes, check that your changes pass all linting checks and the
-   tests, including testing other Python versions with tox::
+   tests::
 
     $ make flake8
     $ make mypy
     $ make bandit
     $ make test
-    $ tox
-
-   To get **flake8**, **mypy**, **bandit** and **tox**, just pip install them into your virtualenv.
 
 6. Commit your changes and push your branch to GitHub::
 
@@ -103,14 +96,15 @@ Before you submit a {% if cookiecutter.ci_tool != 'GitLab' %}pull{% else %}merge
 2. If the {% if cookiecutter.ci_tool != 'GitLab' %}pull{% else %}merge{% endif %} request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The {% if cookiecutter.ci_tool != 'GitLab' %}pull{% else %}merge{% endif %} request should work for Python 3.6, 3.7, and 3.8.
+3. The {% if cookiecutter.ci_tool != 'GitLab' %}pull{% else %}merge{% endif %} request should work for Python 3.8, 3.9, 3.10 and 3.11.
 
 Deploying
 ---------
 
-Assume that bump2version_ is installed. To deploy the package, just run::
+To deploy the package, just run::
 
-    $ bump2version patch  # possible: major / minor / patch
+    $ poetry version patch  # possible: major / minor / patch / premajor / preminor / prepatch
+    $ git commit -m "Bump version: {old_version} -> {new_version}."
     $ git push
     $ git push --tags
 

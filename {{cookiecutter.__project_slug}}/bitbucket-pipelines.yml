@@ -3,43 +3,48 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: python:3.10
+image: python:3.10-slim
+
+.install_poetry: &install_poetry |
+  apt-get update -qy && apt-get install -y build-essential make
+  pip install poetry
+  poetry config virtualenvs.in-project true
+
 
 definitions:
   steps:
     - step: &flake8-check
         name: Lint code with flake8
-        caches:
-          - pip
         script:
+          - *install_poetry
+          - make install
           - make flake8
     - step: &mypy-check
         name: Lint code with mypy
-        caches:
-          - pip
         script:
+          - *install_poetry
+          - make install
           - make mypy
     - step: &bandit-check
         name: Lint code with bandit
-        caches:
-          - pip
         script:
+          - *install_poetry
+          - make install
           - make bandit
     - step: &test-step
         name: Test with pytest
-        caches:
-          - pip
         script:
+          - *install_poetry
+          - make install
           - make test
     - step: &build-step
         name: Build package
-        caches:
-          - pip
         script:
-          - apt update -y && apt install -y make curl
+          - *install_poetry
+          - make install
+          - make build
           - pip install twine
-          - make build_whl
-          - twine check dist/*.whl
+          - poetry run twine check dist/*.whl
 pipelines:
   pull-requests:
     "**":
@@ -49,22 +54,21 @@ pipelines:
           - step: *bandit-check
       - parallel:
           - step:
-              image: python:3.7
+              image: python:3.8-slim
               <<: *test-step
           - step:
-              image: python:3.8
+              image: python:3.9-slim
               <<: *test-step
           - step:
-              image: python:3.9
+              image: python:3.10-slim
               <<: *test-step
           - step:
-              image: python:3.10
+              image: python:3.11-slim
               <<: *test-step
           - step:
-              image: python:3.11
+              image: python:3.12-slim
               <<: *test-step
       - step:
-          image: python:3.10
           <<: *build-step
   branches:
     "{master,develop}":
@@ -74,30 +78,27 @@ pipelines:
           - step: *bandit-check
       - parallel:
           - step:
-              image: python:3.7
+              image: python:3.8-slim
               <<: *test-step
           - step:
-              image: python:3.8
+              image: python:3.9-slim
               <<: *test-step
           - step:
-              image: python:3.9
+              image: python:3.10-slim
               <<: *test-step
           - step:
-              image: python:3.10
+              image: python:3.11-slim
               <<: *test-step
           - step:
-              image: python:3.11
+              image: python:3.12-slim
               <<: *test-step
       - step:
-          image: python:3.10
           <<: *build-step
   tags:
     "v*":   # release tag
       - step:
           name: Deploy to pypi
           script:
-            - pipe: atlassian/pypi-publish:0.3.1
-              variables:
-                PYPI_USERNAME: $TWINE_USERNAME
-                PYPI_PASSWORD: $TWINE_PASSWORD
-                DISTRIBUTIONS: 'bdist_wheel'
+            - *install_poetry
+            - make install
+            - make publish

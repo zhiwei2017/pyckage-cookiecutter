@@ -43,7 +43,7 @@ def test_bake_project(cookies, context, context_override):
     result = cookies.bake(extra_context={**context, **context_override})
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project_path.name == context["project_slug"]
+    assert result.project_path.name == context["__project_slug"]
     assert result.project_path.is_dir()
 
     paths = build_files_list(str(result.project_path))
@@ -55,7 +55,6 @@ def test_bake_project(cookies, context, context_override):
                          [("linting:flake8", ["make ${LINTING_PKG}"]),
                           ("linting:mypy", ["make ${LINTING_PKG}"]),
                           ("linting:bandit", ["make ${LINTING_PKG}"]),
-                          ("test:3.7", ["make test"]),
                           ("test:3.8", ["make test"]),
                           ("test:3.9", ["make test"]),
                           ("test:3.10", ["make test"]),
@@ -68,7 +67,7 @@ def test_gitlab_invokes_linting_and_pytest(cookies, context, stage,
 
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project_path.name == context["project_slug"]
+    assert result.project_path.name == context["__project_slug"]
     assert result.project_path.is_dir()
 
     with open(f"{result.project_path}/.gitlab-ci.yml", "r") as gitlab_yml:
@@ -82,7 +81,7 @@ def test_gitlab_invokes_linting_and_pytest(cookies, context, stage,
 @pytest.mark.parametrize("slug", ["project slug", "Project_Slug"])
 def test_invalid_slug(cookies, context, slug):
     """Invalid slug should fail pre-generation hook."""
-    context.update({"project_slug": slug})
+    context.update({"__project_slug": slug})
 
     result = cookies.bake(extra_context=context)
 
@@ -116,8 +115,6 @@ def general_check(cookies, context_override, check_command, extra_requirements=N
             extra_requirements = ""
         subprocess.run("python3 -m venv venv_tmp "
                        "&& source ./venv_tmp/bin/activate "
-                       "&& pip install -r ./requirements/dev.txt "
-                       "&& pip install -r ./requirements/docs.txt "
                        "{extra_requirements} "
                        "&& {check_command}".format(check_command=check_command,
                                                    extra_requirements=extra_requirements),
@@ -133,6 +130,6 @@ def general_check(cookies, context_override, check_command, extra_requirements=N
 def test_linting_pytest_twine_passes(cookies, context_override):
     """Generated project should pass flake8."""
     general_check(cookies, context_override,
-                  "make flake8 && make mypy && make bandit && make test "
-                  "&& make build_whl && twine check {} && cd docs && make html".format(os.path.join("dist", "*.whl")),
+                  "make install && make flake8 && make mypy && make bandit && make test "
+                  "&& make build && twine check {} && cd docs && poetry run make html".format(os.path.join("dist", "*.whl")),
                   extra_requirements=["twine"])
