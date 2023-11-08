@@ -6,8 +6,9 @@ authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
 readme = "README.rst"
 license = "{{cookiecutter.license}}"
 repository = "{{cookiecutter.project_url}}"
-documentation = ""
+documentation = "{{cookiecutter.project_url}}"
 keywords = []
+classifiers = []
 packages = [
   {include = "{{cookiecutter.__project_slug}}"}
 ]

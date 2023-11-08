@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Pyckage-Cookiecutter"
-version = "1.0.1"
+version = "1.0.2"
 description = "This projects consist of a cookiecutter template that generates a full structure for a creating a PyPi standard package."
 authors = ["Zhiwei Zhang <zhiwei2017@gmail.com>"]
 readme = "README.rst"
@@ -8,6 +8,22 @@ license = "MIT"
 repository = "https://github.com/zhiwei2017/pyckage-cookiecutter"
 documentation = "https://zhiwei2017.github.io/pyckage-cookiecutter/"
 keywords = ['cookiecutter template', 'python38', 'python39', 'python310', 'github-actions', 'gitlab-ci', 'bitbucket-pipelines']
+classifiers = [
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation",
+    "Topic :: Utilities",
+    "Natural Language :: English",
+    "Intended Audience :: Developers"
+]
 packages = [
   {include = "pyckage_cookiecutter"}
 ]
