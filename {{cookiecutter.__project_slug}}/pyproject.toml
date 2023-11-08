@@ -8,6 +8,7 @@ license = "{{cookiecutter.license}}"
 repository = "{{cookiecutter.project_url}}"
 documentation = ""
 keywords = []
+classifiers = []
 packages = [
   {include = "{{cookiecutter.__project_slug}}"}
 ]

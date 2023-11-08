@@ -75,8 +75,7 @@ jobs:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
       - name: Install dependencies
-        run: |
-          poetry self add twine
+        run: pip install twine
       - name: Build and test publishing package
         run: |
           poetry build -f wheel
